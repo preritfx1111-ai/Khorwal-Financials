@@ -66,8 +66,8 @@ export default function Header() {
               <ChevronDown size={16} />
             </button>
 
-            {/* Dropdown menu */}
-            <div className="absolute left-0 mt-0 w-80 bg-slate-800/95 backdrop-blur-md border border-slate-700 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 shadow-lg">
+            {/* Dropdown menu - now aligned to the right */}
+            <div className="absolute -right-20 mt-0 w-96 bg-slate-800/95 backdrop-blur-md border border-slate-700 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 shadow-lg">
               {services.map((service) => {
                 const IconComponent = getIconComponent(service.icon)
                 return (

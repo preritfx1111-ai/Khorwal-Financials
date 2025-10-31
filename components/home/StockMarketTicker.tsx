@@ -66,7 +66,7 @@ export default function StockMarketTicker() {
   const duplicatedStocks = [...stockData, ...stockData, ...stockData]
 
   return (
-    <section className="bg-slate-950 border-y border-slate-800 py-3 overflow-hidden">
+    <section className="bg-slate-900/50 border-b border-slate-800/50 py-4 overflow-hidden">
       <div className="relative overflow-hidden">
         <motion.div
           className="flex space-x-6"
@@ -86,10 +86,14 @@ export default function StockMarketTicker() {
               ) : (
                 <TrendingUp className="w-4 h-4 text-emerald-500" />
               )}
-              <span className="text-slate-300 font-medium">{stock.name}</span>
-              <span className="text-white font-semibold">{stock.price}</span>
-              <span className={stock.direction === "down" ? "text-red-400" : "text-emerald-400"}>{stock.change}</span>
-              <span className={`font-medium ${stock.direction === "down" ? "text-red-400" : "text-emerald-400"}`}>
+              <span className="text-slate-300 font-medium text-sm">{stock.name}</span>
+              <span className="text-white font-semibold text-sm">{stock.price}</span>
+              <span className={`text-sm ${stock.direction === "down" ? "text-red-400" : "text-emerald-400"}`}>
+                {stock.change}
+              </span>
+              <span
+                className={`font-medium text-sm ${stock.direction === "down" ? "text-red-400" : "text-emerald-400"}`}
+              >
                 ({stock.changePercent})
               </span>
             </div>

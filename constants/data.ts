@@ -290,6 +290,30 @@ export const testimonials = [
       "The direct mutual fund approach at Grow Money saved me significant commission charges. The team's expertise and support through market volatility has been exceptional.",
     image: "/professional-male-business-testimonial.jpg",
   },
+  {
+    id: 4,
+    name: "Meera Patel",
+    designation: "Homemaker & Investor",
+    content:
+      "After my retirement, I was concerned about managing my finances. Grow Money's SWP planning ensured a steady income stream while maintaining my portfolio growth. Truly peace of mind!",
+    image: "/professional-female-homemaker-testimonial.jpg",
+  },
+  {
+    id: 5,
+    name: "Arun Nair",
+    designation: "Software Engineer",
+    content:
+      "The SIP calculator and goal-based planning helped me invest strategically. I appreciated the quarterly reviews that kept my portfolio aligned with my financial goals. Great service!",
+    image: "/professional-male-engineer-testimonial.jpg",
+  },
+  {
+    id: 6,
+    name: "Priyanka Sharma",
+    designation: "Consultant",
+    content:
+      "Starting with Grow Money was easy and transparent. No hidden fees, just genuine advice. The team explained everything clearly and helped me build a diversified portfolio. Highly satisfied!",
+    image: "/professional-female-consultant-testimonial.jpg",
+  },
 ]
 
 export const usps = [

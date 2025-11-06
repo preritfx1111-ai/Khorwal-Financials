@@ -1,5 +1,6 @@
 "use client"
 
+import { companyData } from "@/constants/data"
 import { motion } from "framer-motion"
 import { CheckCircle } from "lucide-react"
 
@@ -26,7 +27,9 @@ export default function WelcomeSection() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity" />
               <img
-                src="/financial-advisor-portrait.png"
+                src={companyData.owner.image ||
+                                    "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
+                                    "/placeholder.svg"}
                 alt="Prerit Khorwal"
                 className="rounded-2xl border border-slate-700 w-full relative z-10"
               />

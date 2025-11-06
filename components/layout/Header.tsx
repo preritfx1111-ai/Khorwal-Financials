@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { services } from "@/constants/data"
 import * as Icons from "lucide-react"
@@ -38,13 +39,20 @@ export default function Header() {
       }`}
     >
       <div className="container flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center space-x-2 group">
-          <div className="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
-            <span className="text-white font-bold text-lg">GM</span>
+        <Link href="/" className="flex items-center space-x-3 group">
+          <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg">
+            <Image
+              src="/logo-dark.jpg"
+              alt="Grow Money Logo"
+              width={56}
+              height={56}
+              className="object-contain p-1"
+              priority
+            />
           </div>
           <div className="hidden sm:block">
-            <h1 className="font-bold text-white text-sm leading-tight">Grow Money</h1>
-            <p className="text-xs text-emerald-400">Investment Services</p>
+            <h1 className="font-bold text-white text-lg leading-tight">Grow Money</h1>
+            <p className="text-xs text-emerald-400 font-medium">Investment Services</p>
           </div>
         </Link>
 

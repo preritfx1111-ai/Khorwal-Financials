@@ -50,9 +50,9 @@ export default function About() {
                   financial guidance has grown into a trusted partner for over 1,500 families across the country.
                 </p>
                 <p>
-                  Our founder, Prerit Khorwal, recognized a critical gap in the financial advisory space. While many
-                  distributors focused on commissions, there was a shortage of truly client-centric advisors who
-                  prioritized your interests above all else. This realization sparked the creation of Grow Money.
+                  Our founder, {companyData.owner.name}, recognized a critical gap in the financial advisory space.
+                  While many distributors focused on commissions, there was a shortage of truly client-centric advisors
+                  who prioritized your interests above all else. This realization sparked the creation of Grow Money.
                 </p>
                 <p>
                   Over the past decade, we've managed over ₹250 crores in assets and helped thousands of families
@@ -103,7 +103,8 @@ export default function About() {
                 <img
                   src={
                     companyData.owner.image ||
-                    "/placeholder.svg?height=400&width=300&query=founder-professional-portrait"
+                    "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
+                    "/placeholder.svg"
                   }
                   alt={companyData.owner.name}
                   className="relative w-full rounded-lg border-2 border-emerald-600/50 object-cover"
@@ -154,6 +155,19 @@ export default function About() {
                   helping families achieve financial security and achieve their long-term wealth creation goals with
                   confidence and clarity.
                 </p>
+              </div>
+
+              {/* Expertise & Services */}
+              <div className="card-dark p-6 border border-emerald-600/30">
+                <h3 className="text-xl font-bold text-white mb-4">Expertise & Services</h3>
+                <ul className="space-y-3">
+                  {companyData.owner.services.map((service, index) => (
+                    <li key={index} className="flex items-start space-x-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <span>{service}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* LinkedIn Link */}
@@ -232,10 +246,10 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Shield, label: "SEBI Registered", value: "INZ000012345" },
-              { icon: Award, label: "AMFI Registration", value: "ARN-171566" },
+              { icon: Shield, label: "SEBI Registered", value: companyData.registration.sebi },
+              { icon: Award, label: "AMFI Registration", value: companyData.registration.amfi },
               { icon: TrendingUp, label: "Industry Membership", value: "IAMAI Member" },
-              { icon: Users, label: "Client Base", value: "1,500+ Families" },
+              { icon: Users, label: "Active Clients", value: "1,500+" },
             ].map((cert, index) => {
               const Icon = cert.icon
               return (

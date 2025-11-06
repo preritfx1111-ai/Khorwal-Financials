@@ -4,29 +4,38 @@ export const companyData = {
   name: "Grow Money Investment Services",
   tagline: "Your Trusted Partner in Wealth Creation",
   owner: {
-    name: "Prerit Khorwal",
-    designation: "Founder & Chief Investment Advisor",
+    name: "Suman Khorwal",
+    designation: "AMFI-Registered Mutual Fund Distributor",
     qualifications: [
-      "CFP (Certified Financial Planner)",
-      "NISM Certified",
-      "MBA in Finance",
-      "10+ years in wealth management",
+      "NISM Certified Mutual Fund Distributor",
+      "AMFI Registered (ARN: 154187)",
+      "7+ years in wealth management",
     ],
-    bio: "Prerit Khorwal is a seasoned financial advisor with over a decade of experience in wealth management and investment advisory. With a strong background in finance and a passion for helping people achieve their financial goals, he founded Grow Money Investment Services in 2015. His client-centric approach and deep market insights have earned him recognition in the industry. Prerit holds multiple certifications including CFP and NISM, and is dedicated to providing transparent, unbiased financial guidance that puts his clients' interests first.",
-    image: "/financial-advisor-portrait.png",
+    bio: "Suman Khorwal is an AMFI-registered Mutual Fund Distributor (ARN: 154187) with over 7 years of experience in helping clients achieve their financial goals through disciplined and diversified investment strategies. With a strong focus on transparency, trust, and client education, Suman provides personalized investment solutions designed to suit every investor's unique goals, risk profile, and financial aspirations. Whether it's wealth creation, tax saving, or retirement planning, Suman ensures that every client's portfolio is aligned with their long-term objectives. Over the years, Suman has worked with a wide range of investors — from salaried individuals and business owners to senior citizens and first-time investors — guiding them toward smarter financial decisions and sustainable wealth growth.",
+    certification:
+      "Suman Khorwal is a NISM Certified Mutual Fund Distributor, registered with the Association of Mutual Funds in India (AMFI) under ARN No. 154187. This certification ensures a strong understanding of mutual fund products, compliance, and ethical investor practices.",
+    services: [
+      "Mutual Fund Investments & Portfolio Review",
+      "SIP & Goal-Based Investment Planning",
+      "Retirement & Tax-Saving Solutions",
+      "Investor Awareness & Financial Education",
+    ],
+    mission:
+      "To simplify investing for every individual and help them build long-term financial security through the power of mutual funds and disciplined financial planning.",
+    image: "/suman-khorwal.jpg",
   },
   registration: {
-    amfi: "ARN-171566",
+    amfi: "ARN-154187",
     sebi: "INZ000012345",
     cin: "U67120MH2015PTC123456",
   },
   contact: {
-    phone: "+91 98765 43210",
-    email: "contact@growmoney.in",
-    whatsapp: "+91 98765 43210",
+    phone: "+91 9911186409",
+    email: "growmoney1709@gmail.com",
+    whatsapp: "+91 9911186409",
     address: "123, Business Tower, Financial District, Mumbai, Maharashtra - 400001",
   },
-  workingHours: "Mon - Sat: 9:00 AM - 6:00 PM IST",
+  workingHours: "Mon - Sat: 10:00 AM - 6:00 PM IST",
   socialMedia: {
     facebook: "https://facebook.com/growmoney",
     twitter: "https://twitter.com/growmoney",
@@ -100,9 +109,9 @@ export const statistics = [
     icon: "Users",
   },
   {
-    number: 10,
+    number: 7,
     label: "Years of Experience",
-    suffix: "",
+    suffix: "+",
     icon: "Award",
   },
   {
@@ -186,11 +195,15 @@ export const mutualFunds = [
 export const teamMembers = [
   {
     id: 1,
-    name: "Prerit Khorwal",
-    designation: "Founder & Chief Investment Advisor",
-    bio: "With over a decade of experience in financial advisory and wealth management, Prerit founded Grow Money with a vision to democratize professional financial guidance. His systematic approach to investing and client-centric philosophy has earned the trust of over 1,500 families. He holds certifications in financial planning and is a regular speaker at financial literacy workshops.",
-    qualifications: ["CFP (Certified Financial Planner)", "NISM Certified", "MBA in Finance"],
-    image: "/professional-male-financial-advisor.jpg",
+    name: "Suman Khorwal",
+    designation: "AMFI-Registered Mutual Fund Distributor",
+    bio: "Suman Khorwal is an AMFI-registered Mutual Fund Distributor (ARN: 154187) with over 7 years of experience in helping clients achieve their financial goals through disciplined and diversified investment strategies. With a strong focus on transparency, trust, and client education, Suman provides personalized investment solutions designed to suit every investor's unique goals, risk profile, and financial aspirations. Over the years, Suman has worked with a wide range of investors — from salaried individuals and business owners to senior citizens and first-time investors — guiding them toward smarter financial decisions and sustainable wealth growth.",
+    qualifications: [
+      "NISM Certified Mutual Fund Distributor",
+      "AMFI Registered (ARN: 154187)",
+      "7+ years in wealth management",
+    ],
+    image: "/suman-khorwal.jpg",
     linkedIn: "https://linkedin.com",
   },
   {
@@ -271,7 +284,7 @@ export const testimonials = [
     name: "Rajesh Kumar",
     designation: "Business Owner",
     content:
-      "Working with Grow Money was one of the best decisions for my family's financial future. Prerit's transparent approach and personalized strategies have helped us achieve our goals. Highly recommended!",
+      "Working with Grow Money was one of the best decisions for my family's financial future. Suman's transparent approach and personalized strategies have helped us achieve our goals. Highly recommended!",
     image: "/professional-male-testimonial.jpg",
   },
   {
@@ -279,7 +292,7 @@ export const testimonials = [
     name: "Anita Desai",
     designation: "IT Professional",
     content:
-      "I was overwhelmed with investment options until I met Prerit. His guidance on SIP planning and portfolio diversification gave me confidence. The regular reviews and updates keep me on track.",
+      "I was overwhelmed with investment options until I met Suman. Her guidance on SIP planning and portfolio diversification gave me confidence. The regular reviews and updates keep me on track.",
     image: "/professional-female-testimonial.jpg",
   },
   {
@@ -351,7 +364,7 @@ export const usps = [
 
 export const companyStory = {
   mission:
-    "To democratize access to professional financial advisory services and empower individuals to make informed investment decisions for secure wealth creation.",
+    "To simplify investing for every individual and help them build long-term financial security through the power of mutual funds and disciplined financial planning.",
   vision:
     "To become India's most trusted and client-centric investment advisory firm, recognized for transparency, expertise, and consistent value delivery.",
   values: [

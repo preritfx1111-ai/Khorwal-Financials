@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { LogIn, Eye, Download, Headphones, ArrowRight } from "lucide-react"
+import { LogIn, Eye, Headphones, ArrowRight } from "lucide-react"
 
 const quickLinks = [
   {
@@ -13,11 +13,6 @@ const quickLinks = [
     icon: Eye,
     title: "View Portfolio",
     description: "Track your investments in real-time",
-  },
-  {
-    icon: Download,
-    title: "Download Statements",
-    description: "Get your investment reports anytime",
   },
   {
     icon: Headphones,
@@ -65,7 +60,7 @@ export default function QuickLinksSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {quickLinks.map((link, index) => {
             const Icon = link.icon

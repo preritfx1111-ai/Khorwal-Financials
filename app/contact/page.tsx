@@ -179,7 +179,9 @@ export default function Contact() {
 
               <div className="card-dark p-6">
                 <a
-                  href={`https://wa.me/${companyData.contact.whatsapp.replace(/[^0-9]/g, "")}`}
+                  href={`https://wa.me/919911186409`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-secondary w-full text-center"
                 >
                   Chat on WhatsApp
@@ -193,17 +195,22 @@ export default function Contact() {
       {/* Map */}
       <section className="py-12 bg-slate-800/20">
         <div className="container">
+          <h2 className="text-2xl font-bold text-white mb-6">Find Us Here</h2>
           <div className="rounded-lg overflow-hidden border border-slate-700 h-96">
             <iframe
               width="100%"
               height="100%"
               frameBorder="0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.2765750225284!2d72.82667!3d19.0176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9ef6b8c3b2d%3A0x3b8c3b2d!2sFinancial%20District%2C%20Mumbai!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3844166097276!2d77.08070012346942!3d28.517773874549666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdf8c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2sSagar%20Tower%2C%20Janakpuri%2C%20Delhi!5e0!3m2!1sen!2sin!4v1707396000000"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
+              title="Grow Money Investment Services Location"
             ></iframe>
           </div>
+          <p className="text-slate-400 text-sm mt-4 text-center">
+            Sagar Tower, 6th Floor, Above SBI, Near Gate No. 3 of Janakpuri Metro Station, District Centre, Janakpuri, Delhi - 110058
+          </p>
         </div>
       </section>
     </main>

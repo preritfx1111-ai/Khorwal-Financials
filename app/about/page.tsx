@@ -45,9 +45,9 @@ export default function About() {
               <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
               <div className="space-y-4 text-slate-300 leading-relaxed text-lg">
                 <p>
-                  Grow Money Investment Services was founded in 2015 with a singular vision: to revolutionize financial
+                  Grow Money Investment Services was founded with a singular vision: to revolutionize financial
                   advisory services in India. What began as a passionate endeavor to democratize access to professional
-                  financial guidance has grown into a trusted partner for over 1,500 families across the country.
+                  financial guidance has grown into a trusted partner for over 150+ happy families across the country.
                 </p>
                 <p>
                   Our founder, {companyData.owner.name}, recognized a critical gap in the financial advisory space.
@@ -55,9 +55,8 @@ export default function About() {
                   who prioritized your interests above all else. This realization sparked the creation of Grow Money.
                 </p>
                 <p>
-                  Over the past decade, we've managed over ₹250 crores in assets and helped thousands of families
-                  achieve their financial goals. But our true measure of success isn't the numbers—it's the trust our
-                  clients place in us and the financial security we've helped create for their families.
+                  Throughout our journey, we've helped families achieve their financial goals through disciplined and goal-based investment strategies. 
+                  Our true measure of success isn't the numbers—it's the trust our clients place in us and the financial security we've helped create for their families.
                 </p>
                 <p>
                   Today, Grow Money stands as a beacon of transparency and integrity in the financial advisory industry,
@@ -105,7 +104,7 @@ export default function About() {
                     companyData.owner.image ||
                     "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
                     "/placeholder.svg"
-                  }
+                   || "/placeholder.svg"}
                   alt={companyData.owner.name}
                   className="relative w-full rounded-lg border-2 border-emerald-600/50 object-cover"
                 />
@@ -141,18 +140,17 @@ export default function About() {
               <div className="card-dark p-6 border border-emerald-600/30">
                 <h3 className="text-xl font-bold text-white mb-4">Investment Philosophy</h3>
                 <p className="text-slate-300 leading-relaxed text-sm mb-3">
-                  Prerit believes in a value investing approach that emphasizes long-term wealth creation over
-                  short-term gains. His philosophy centers on understanding market fundamentals and identifying
-                  investments with genuine potential for sustainable growth.
+                  Suman believes in a goal-based investing approach that emphasizes long-term wealth creation aligned with your life objectives.
+                  Her philosophy centers on understanding your financial goals and identifying investments with genuine potential for sustainable growth.
                 </p>
                 <p className="text-slate-300 leading-relaxed text-sm mb-3">
-                  With a client-first mindset, he prioritizes transparency and education, ensuring every client
-                  understands their investment strategy and the rationale behind each recommendation. His goal is not
+                  With a client-first mindset, she prioritizes transparency and education, ensuring every client
+                  understands their investment strategy and the rationale behind each recommendation. Her goal is not
                   just to manage money, but to empower individuals to make informed financial decisions.
                 </p>
                 <p className="text-slate-300 leading-relaxed text-sm">
-                  Through personalized advisory and consistent portfolio management, Prerit has built a track record of
-                  helping families achieve financial security and achieve their long-term wealth creation goals with
+                  Through personalized advisory and consistent portfolio management, Suman has built a track record of
+                  helping families achieve financial security and their long-term wealth creation goals with
                   confidence and clarity.
                 </p>
               </div>
@@ -246,10 +244,10 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Shield, label: "SEBI Registered", value: companyData.registration.sebi },
               { icon: Award, label: "AMFI Registration", value: companyData.registration.amfi },
+              { icon: Shield, label: "NISM Certified", value: "Mutual Fund Distributor" },
               { icon: TrendingUp, label: "Industry Membership", value: "IAMAI Member" },
-              { icon: Users, label: "Active Clients", value: "1,500+" },
+              { icon: Users, label: "Happy Clients", value: "150+" },
             ].map((cert, index) => {
               const Icon = cert.icon
               return (

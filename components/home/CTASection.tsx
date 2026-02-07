@@ -12,14 +12,24 @@ export default function CTASection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="btn-primary group flex items-center justify-center space-x-2">
+          <a
+            href="http://p.njw.bz/84811"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary group flex items-center justify-center space-x-2"
+          >
             <span>Get Started</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button className="btn-secondary flex items-center justify-center space-x-2">
+          </a>
+          <a
+            href="https://wa.me/919911186409"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary flex items-center justify-center space-x-2"
+          >
             <span>Contact Us</span>
             <ArrowRight size={18} />
-          </button>
+          </a>
         </div>
       </div>
     </section>

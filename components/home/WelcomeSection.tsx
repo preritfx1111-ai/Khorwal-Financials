@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { companyData } from "@/constants/data"
-import { motion } from "framer-motion"
-import { CheckCircle } from "lucide-react"
+import { companyData } from "@/constants/data";
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 export default function WelcomeSection() {
   const points = [
-    "SEBI Registered Investment Advisor",
+    "AMFI Registered Mutual Fund Distributor",
     "10+ Years of Proven Experience",
     "Personalized Investment Strategies",
-    "Zero Commission on Direct Plans",
-  ]
+    "Goal-Based Planning Approach",
+  ];
 
   return (
     <section className="py-20">
@@ -27,10 +27,12 @@ export default function WelcomeSection() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-blue-600 rounded-2xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity" />
               <img
-                src={companyData.owner.image ||
-                                    "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
-                                    "/placeholder.svg"}
-                alt="Prerit Khorwal"
+                src={
+                  companyData.owner.image ||
+                  "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
+                  "/placeholder.svg"
+                 || "/placeholder.svg"}
+                alt="Suman Khorwal"
                 className="rounded-2xl border border-slate-700 w-full relative z-10"
               />
             </div>
@@ -48,15 +50,18 @@ export default function WelcomeSection() {
             </h2>
 
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              At Grow Money, we believe that wealth creation is not just about making money—it's about building a secure
-              financial future for you and your loved ones. Founded in 2015 by Prerit Khorwal, our firm has grown from a
-              single-person consultancy to a trusted partner for over 1,500 families across India.
+              At Grow Money, we believe that wealth creation is not just about
+              making money—it's about building a secure financial future for you
+              and your loved ones. Founded by Suman Khorwal, our firm
+              has grown from a single-person consultancy to a trusted partner
+              for over 150+ happy families across India.
             </p>
 
             <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-              Our journey began with a simple mission: to democratize access to professional financial advice and make
-              mutual fund investments accessible to every Indian. What sets us apart is our unwavering commitment to
-              transparency and your interests.
+              Our journey began with a simple mission: to democratize access to
+              professional financial advice and make mutual fund investments
+              accessible to every Indian. What sets us apart is our unwavering
+              commitment to transparency and your interests.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -75,10 +80,10 @@ export default function WelcomeSection() {
               ))}
             </div>
 
-            <button className="btn-primary">Know More About Us</button>
+            <a href="/about" className="btn-primary inline-block">Know More About Us</a>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

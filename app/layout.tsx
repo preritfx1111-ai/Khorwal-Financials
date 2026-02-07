@@ -12,7 +12,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Grow Money Investment Services - Financial Advisory",
   description:
-    "Professional mutual fund advisory, SIP planning, and wealth management services. SEBI registered investment advisor with 10+ years experience.",
+    "Professional mutual fund advisory, SIP planning, and wealth management services. AMFI registered mutual fund distributor with 10+ years experience.",
   generator: "v0.app",
 }
 

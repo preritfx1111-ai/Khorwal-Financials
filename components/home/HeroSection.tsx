@@ -34,7 +34,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants} className="mb-6">
             <div className="inline-flex items-center space-x-2 bg-emerald-600/20 border border-emerald-600/50 rounded-full px-4 py-2">
               <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-emerald-400 text-sm font-medium">Trusted by 1,500+ Investors</span>
+              <span className="text-emerald-400 text-sm font-medium">Trusted by 150+ Happy Investors</span>
             </div>
           </motion.div>
 
@@ -54,23 +54,33 @@ export default function HeroSection() {
             className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 mb-8 backdrop-blur-sm"
           >
             <p className="text-slate-300 text-center md:text-left">
-              <span className="text-emerald-400 font-semibold">₹250+ Cr AUM Managed</span>
+              <span className="text-emerald-400 font-semibold">Goal-Based Planning</span>
               <span className="mx-2 text-slate-600">•</span>
               <span className="text-emerald-400 font-semibold">10+ Years Experience</span>
               <span className="mx-2 text-slate-600">•</span>
-              <span className="text-emerald-400 font-semibold">SEBI Registered</span>
+              <span className="text-emerald-400 font-semibold">AMFI Registered</span>
             </p>
           </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-            <button className="btn-primary group flex items-center justify-center space-x-2">
+            <a
+              href="http://p.njw.bz/84811"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary group flex items-center justify-center space-x-2"
+            >
               <span>Start SIP Investment</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="btn-secondary flex items-center justify-center space-x-2">
+            </a>
+            <a
+              href="https://wa.me/919911186409"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary flex items-center justify-center space-x-2"
+            >
               <span>Schedule Free Consultation</span>
               <ArrowRight size={18} />
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 

@@ -33,13 +33,13 @@ export const companyData = {
     phone: "+91 9911186409",
     email: "growmoney1709@gmail.com",
     whatsapp: "+91 9911186409",
-    address: "123, Business Tower, Financial District, Mumbai, Maharashtra - 400001",
+    address: "No. 601-604, Sagar Tower, 6th Floor, Above SBI, Near Gate No. 3 of Janakpuri Metro Station, District Centre, Janakpuri, Delhi - 110058",
   },
   workingHours: "Mon - Sat: 10:00 AM - 6:00 PM IST",
   socialMedia: {
     facebook: "https://facebook.com/growmoney",
     twitter: "https://twitter.com/growmoney",
-    instagram: "https://instagram.com/growmoney",
+    instagram: "https://www.instagram.com/suman.finvisor",
     linkedin: "https://linkedin.com/company/growmoney",
     youtube: "https://youtube.com/@growmoney",
   },
@@ -54,7 +54,7 @@ export const services = [
       "Invest in a diversified portfolio of top-performing mutual funds tailored to your risk profile. We provide access to direct plans that eliminate distributor charges, saving you up to 1-1.5% annually on your investments. Whether you're a first-time investor or an experienced one, our experts will guide you to build a robust investment portfolio aligned with your financial objectives.",
     features: [
       "Direct mutual fund access",
-      "Zero commission plans",
+      "Goal-based planning",
       "Portfolio diversification",
       "Risk-based allocation",
     ],
@@ -103,8 +103,8 @@ export const services = [
 
 export const statistics = [
   {
-    number: 1500,
-    label: "Active Clients",
+    number: 150,
+    label: "Happy Clients",
     suffix: "+",
     icon: "Users",
   },
@@ -113,13 +113,6 @@ export const statistics = [
     label: "Years of Experience",
     suffix: "+",
     icon: "Award",
-  },
-  {
-    number: 250,
-    label: "Assets Under Management",
-    suffix: " Cr",
-    icon: "TrendingUp",
-    prefix: "₹",
   },
   {
     number: 4.8,
@@ -138,6 +131,12 @@ export const statistics = [
     label: "Average Annual Returns",
     suffix: "%",
     icon: "BarChart3",
+  },
+  {
+    number: 100,
+    label: "Diverse Fund Options",
+    suffix: "+",
+    icon: "TrendingUp",
   },
 ]
 
@@ -331,9 +330,9 @@ export const testimonials = [
 
 export const usps = [
   {
-    title: "SEBI Registered",
+    title: "AMFI Registered",
     description:
-      "Our services are fully regulated and registered with the Securities and Exchange Board of India, ensuring complete compliance and investor protection.",
+      "Our services are fully regulated and registered with the Association of Mutual Funds in India (AMFI), ensuring complete compliance and investor protection.",
   },
   {
     title: "Transparent Advisory",
@@ -341,9 +340,9 @@ export const usps = [
       "We believe in complete transparency. No hidden charges, no conflict of interest. Our recommendations are always based on your needs, not commission incentives.",
   },
   {
-    title: "Zero Commission",
+    title: "Goal-Based Planning",
     description:
-      "We provide access to direct mutual fund plans with zero commission, saving you up to 1-1.5% annually compared to regular plans.",
+      "We focus on your financial goals rather than just products. Our goal-based planning approach ensures every investment decision aligns with your life objectives.",
   },
   {
     title: "Personalized Strategies",

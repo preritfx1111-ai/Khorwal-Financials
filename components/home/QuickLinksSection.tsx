@@ -1,18 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { LogIn, Eye, Headphones, ArrowRight } from "lucide-react"
+import { LogIn, Eye, Headphones, ArrowRight, Divide, Phone, Mail, MapPin } from "lucide-react"
+import { companyData } from "@/constants/data"
 
 const quickLinks = [
   {
     icon: LogIn,
     title: "Login & Transact",
     description: "Access your portfolio and manage investments",
+    url: "https://ewa.njindiaonline.com/ewa/login"
   },
   {
     icon: Eye,
     title: "View Portfolio",
     description: "Track your investments in real-time",
+    url: "https://www.njindiaonline.in/cdesk/login.fin"
   },
   {
     icon: Headphones,
@@ -70,6 +73,11 @@ export default function QuickLinksSection() {
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
                 className="card-dark p-6 hover:border-emerald-600/50 transition-all duration-300 group cursor-pointer"
+                onClick={() => {
+                  if (link.url) {
+                    window.open(link.url, "_blank")
+                  }
+                }}
               >
                 <div className="w-12 h-12 bg-emerald-600/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-600/30 transition-colors">
                   <Icon className="w-6 h-6 text-emerald-400" />
@@ -79,10 +87,27 @@ export default function QuickLinksSection() {
 
                 <p className="text-slate-400 text-sm mb-4">{link.description}</p>
 
-                <div className="flex items-center text-emerald-400 font-semibold text-sm group-hover:space-x-2 transition-all">
-                  <span>Explore</span>
-                  <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
+                {link.title !== "Customer Support" ? (
+                  <div className="flex items-center text-emerald-400 font-semibold text-sm group-hover:space-x-2 transition-all">
+                    <span>Explore</span>
+                    <ArrowRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                ) : (<div>
+                  <ul className="space-y-3 text-slate-400 text-sm">
+                    <li className="flex space-x-2">
+                      <Phone size={16} className="text-emerald-600 flex-shrink-0" />
+                      <a href={`tel:${companyData.contact.phone}`} className="hover:text-emerald-400 transition-colors">
+                        {companyData.contact.phone}
+                      </a>
+                    </li>
+                    <li className="flex space-x-2">
+                      <Mail size={16} className="text-emerald-600 flex-shrink-0" />
+                      <a href={`mailto:${companyData.contact.email}`} className="hover:text-emerald-400 transition-colors">
+                        {companyData.contact.email}
+                      </a>
+                    </li>
+                  </ul>
+                </div>)}
               </motion.div>
             )
           })}

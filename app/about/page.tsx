@@ -55,7 +55,7 @@ export default function About() {
                   who prioritized your interests above all else. This realization sparked the creation of Grow Money.
                 </p>
                 <p>
-                  Throughout our journey, we've helped families achieve their financial goals through disciplined and goal-based investment strategies. 
+                  Throughout our journey, we've helped families achieve their financial goals through disciplined and goal-based investment strategies.
                   Our true measure of success isn't the numbers—it's the trust our clients place in us and the financial security we've helped create for their families.
                 </p>
                 <p>
@@ -104,7 +104,7 @@ export default function About() {
                     companyData.owner.image ||
                     "/placeholder.svg?height=400&width=300&query=founder-professional-portrait" ||
                     "/placeholder.svg"
-                   || "/placeholder.svg"}
+                    || "/placeholder.svg"}
                   alt={companyData.owner.name}
                   className="relative w-full rounded-lg border-2 border-emerald-600/50 object-cover"
                 />
@@ -276,7 +276,9 @@ export default function About() {
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
             Let's work together to achieve your financial goals and build lasting wealth for your family.
           </p>
-          <button className="btn-primary">Schedule a Consultation</button>
+          <a href="https://wa.me/919911186409"
+            target="_blank"
+            rel="noopener noreferrer" className="btn-primary">Schedule a Consultation</a>
         </div>
       </section>
     </main>

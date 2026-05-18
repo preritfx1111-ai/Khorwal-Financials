@@ -89,7 +89,9 @@ export default function Team() {
             We're always looking for talented professionals passionate about financial services and client success. If
             you share our values, we'd love to hear from you!
           </p>
-          <button className="btn-primary">View Career Opportunities</button>
+          <a href="https://wa.me/919911186409"
+            target="_blank"
+            rel="noopener noreferrer" className="btn-primary">View Career Opportunities</a>
         </div>
       </section>
     </main>

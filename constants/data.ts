@@ -37,11 +37,10 @@ export const companyData = {
   },
   workingHours: "Mon - Sat: 10:00 AM - 6:00 PM IST",
   socialMedia: {
-    facebook: "https://facebook.com/growmoney",
-    twitter: "https://twitter.com/growmoney",
-    instagram: "https://www.instagram.com/suman.finvisor",
-    linkedin: "https://linkedin.com/company/growmoney",
-    youtube: "https://youtube.com/@growmoney",
+    facebook: "https://www.facebook.com/share/18FVpxAQLT/",
+    twitter: "https://x.com/MfdSuman",
+    instagram: "https://www.instagram.com/suman.finvisor?utm_source=qr&igsh=bmVrZ3NybjU1aHMy",
+    linkedin: "https://www.linkedin.com/in/suman-khorwal-751659237?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   },
 }
 
@@ -141,31 +140,15 @@ export const statistics = [
 ]
 
 export const partners = [
-  { name: "HDFC Mutual Fund", initials: "HDFC" },
-  { name: "ICICI Prudential", initials: "ICICI" },
-  { name: "SBI Mutual Fund", initials: "SBI" },
-  { name: "Axis Mutual Fund", initials: "Axis" },
-  { name: "Aditya Birla Sun Life", initials: "ABSL" },
-  { name: "Nippon India", initials: "NIP" },
-  { name: "Kotak Mahindra", initials: "KMC" },
-  { name: "DSP Mutual Fund", initials: "DSP" },
-  { name: "Tata Mutual Fund", initials: "Tata" },
-  { name: "UTI Mutual Fund", initials: "UTI" },
-  { name: "Franklin Templeton", initials: "FT" },
-  { name: "IDFC Mutual Fund", initials: "IDFC" },
-  { name: "L&T Mutual Fund", initials: "L&T" },
-  { name: "Mirae Asset", initials: "MA" },
-  { name: "Motilal Oswal", initials: "MO" },
-  { name: "Parag Parikh", initials: "PP" },
-  { name: "Quantum Mutual Fund", initials: "QMF" },
-  { name: "Quant Mutual Fund", initials: "QF" },
-  { name: "Mahindra Manulife", initials: "MM" },
-  { name: "Edelweiss", initials: "EW" },
-  { name: "Sundaram Mutual Fund", initials: "SM" },
-  { name: "PPFAS", initials: "PPFAS" },
-  { name: "Baroda BNP Paribas", initials: "BBNP" },
-  { name: "Canara Robeco", initials: "CRF" },
-  { name: "Union Mutual Fund", initials: "UMF" },
+  { name: "HDFC Mutual Fund", logo: "/Brands Logo/hdfcfund-com-logo.png" },
+  { name: "ICICI Prudential", logo: "/Brands Logo/iciciprulife-com-logo.png" },
+  { name: "SBI Mutual Fund", logo: "/Brands Logo/sbimf-com-logo.png" },
+  { name: "Axis Mutual Fund", logo: "/Brands Logo/axismf-com-logo.png" },
+  { name: "Aditya Birla Sun Life", logo: "/Brands Logo/adityabirlasunlifeamc-com-logo.png" },
+  { name: "Nippon India", logo: "/Brands Logo/nipponindiaim-com-logo.png" },
+  { name: "Kotak Mahindra", logo: "/Brands Logo/kotakpensionfund-com-logo.png" },
+  { name: "Tata Mutual Fund", logo: "/Brands Logo/tatamutualfund-com-logo.png" },
+  { name: "Union Mutual Fund", logo: "/Brands Logo/unionmf-com-logo.png" },
 ]
 
 export const mutualFunds = [
@@ -257,22 +240,6 @@ export const calculators = [
     icon: "Wallet",
     description:
       "Plan your retirement income with our SWP calculator. Determine the optimal withdrawal amount to ensure your corpus lasts through your retirement while generating regular income.",
-    status: "Coming Soon",
-  },
-  {
-    id: 4,
-    title: "Step-up SIP Calculator",
-    icon: "ArrowUpCircle",
-    description:
-      "Calculate returns on SIPs with annual increments. Perfect for professionals expecting salary increases who want to boost their SIP contributions regularly.",
-    status: "Coming Soon",
-  },
-  {
-    id: 5,
-    title: "Goal Planning Calculator",
-    icon: "Target",
-    description:
-      "Plan investments for your financial goals like education, home purchase, or vacation. Calculate required monthly investments to achieve your specific financial objectives.",
     status: "Coming Soon",
   },
 ]

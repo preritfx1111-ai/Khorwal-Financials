@@ -190,7 +190,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         // toEmail: "growmoney1709@gmail.com",
-        toEmail: "goldenshenron2021@gmail.com",
+        toEmail: "growmoney1709@gmail.com",
         subject: `New Enquiry — ${service} | ${name}`,
         fromName: "Khorwal Financials Website",
         replyTo: email,

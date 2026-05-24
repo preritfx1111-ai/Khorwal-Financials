@@ -1,7 +1,7 @@
-// Complete mock data for Grow Money Investment Services
+// Complete mock data for Khorwal Financials
 
 export const companyData = {
-  name: "Grow Money Investment Services",
+  name: "Khorwal Financials",
   tagline: "Your Trusted Partner in Wealth Creation",
   owner: {
     name: "Suman Khorwal",
@@ -39,8 +39,8 @@ export const companyData = {
   socialMedia: {
     facebook: "https://www.facebook.com/share/18FVpxAQLT/",
     twitter: "https://x.com/MfdSuman",
-    instagram: "https://www.instagram.com/suman.finvisor?utm_source=qr&igsh=bmVrZ3NybjU1aHMy",
-    linkedin: "https://www.linkedin.com/in/suman-khorwal-751659237?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    instagram: "https://www.instagram.com/khorwal_financials",
+    linkedin: "https://www.linkedin.com/in/suman-khorwal-751659237/",
   },
 }
 
@@ -250,7 +250,7 @@ export const testimonials = [
     name: "Rajesh Kumar",
     designation: "Business Owner",
     content:
-      "Working with Grow Money was one of the best decisions for my family's financial future. Suman's transparent approach and personalized strategies have helped us achieve our goals. Highly recommended!",
+      "Working with Khorwal Financials was one of the best decisions for my family's financial future. Suman's transparent approach and personalized strategies have helped us achieve our goals. Highly recommended!",
     image: "/professional-male-testimonial.jpg",
   },
   {
@@ -266,7 +266,7 @@ export const testimonials = [
     name: "Vikram Singh",
     designation: "Corporate Executive",
     content:
-      "The direct mutual fund approach at Grow Money saved me significant commission charges. The team's expertise and support through market volatility has been exceptional.",
+      "The direct mutual fund approach at Khorwal Financials saved me significant commission charges. The team's expertise and support through market volatility has been exceptional.",
     image: "/professional-male-business-testimonial.jpg",
   },
   {
@@ -274,7 +274,7 @@ export const testimonials = [
     name: "Meera Patel",
     designation: "Homemaker & Investor",
     content:
-      "After my retirement, I was concerned about managing my finances. Grow Money's SWP planning ensured a steady income stream while maintaining my portfolio growth. Truly peace of mind!",
+      "After my retirement, I was concerned about managing my finances. Khorwal Financials' SWP planning ensured a steady income stream while maintaining my portfolio growth. Truly peace of mind!",
     image: "/professional-female-homemaker-testimonial.jpg",
   },
   {
@@ -290,7 +290,7 @@ export const testimonials = [
     name: "Priyanka Sharma",
     designation: "Consultant",
     content:
-      "Starting with Grow Money was easy and transparent. No hidden fees, just genuine advice. The team explained everything clearly and helped me build a diversified portfolio. Highly satisfied!",
+      "Starting with Khorwal Financials was easy and transparent. No hidden fees, just genuine advice. The team explained everything clearly and helped me build a diversified portfolio. Highly satisfied!",
     image: "/professional-female-consultant-testimonial.jpg",
   },
 ]
@@ -330,9 +330,9 @@ export const usps = [
 
 export const companyStory = {
   mission:
-    "To simplify investing for every individual and help them build long-term financial security through the power of mutual funds and disciplined financial planning.",
+    "To simplify investing for every individual and help them build lasting financial security through transparent advice, mutual funds, and disciplined financial planning.",
   vision:
-    "To become India's most trusted and client-centric investment advisory firm, recognized for transparency, expertise, and consistent value delivery.",
+    "To become India's most trusted and client-centric financial advisory firm, recognized for transparency, expertise, and consistent value delivered to every family we serve.",
   values: [
     {
       title: "Integrity",

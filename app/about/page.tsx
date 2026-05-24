@@ -28,7 +28,7 @@ export default function About() {
   return (
     <main>
       <PageHeader
-        title="About Grow Money Investment Services"
+        title="About Khorwal Financials"
         subtitle="Building Trust Through Transparency and Excellence"
       />
 
@@ -45,22 +45,19 @@ export default function About() {
               <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
               <div className="space-y-4 text-slate-300 leading-relaxed text-lg">
                 <p>
-                  Grow Money Investment Services was founded with a singular vision: to revolutionize financial
-                  advisory services in India. What began as a passionate endeavor to democratize access to professional
-                  financial guidance has grown into a trusted partner for over 150+ happy families across the country.
+                  Khorwal Financials was founded with a clear purpose: to make professional financial advisory accessible, honest, and truly client-first. What started as a commitment to helping everyday families navigate the complexities of investing has grown into a trusted name for hundreds of households across India.
+
                 </p>
                 <p>
-                  Our founder, {companyData.owner.name}, recognized a critical gap in the financial advisory space.
-                  While many distributors focused on commissions, there was a shortage of truly client-centric advisors
-                  who prioritized your interests above all else. This realization sparked the creation of Grow Money.
+                  Our founder saw a financial advisory landscape driven by commissions rather than client outcomes — where the advice given often served the advisor more than the investor. Khorwal Financials was built to be different: a firm where your financial goals come first, always.
+
                 </p>
                 <p>
-                  Throughout our journey, we've helped families achieve their financial goals through disciplined and goal-based investment strategies.
-                  Our true measure of success isn't the numbers—it's the trust our clients place in us and the financial security we've helped create for their families.
+                  Over the years, we have helped families plan for retirement, build education funds, and achieve long-term financial independence through goal-based, disciplined investment strategies. Our success is not measured in AUM alone — it is measured in the peace of mind our clients carry.
+
                 </p>
                 <p>
-                  Today, Grow Money stands as a beacon of transparency and integrity in the financial advisory industry,
-                  recognized and respected by clients and industry peers alike.
+                  Today, Khorwal Financials stands as a beacon of integrity and expertise in the financial advisory space — respected by clients and peers alike for doing things the right way.
                 </p>
               </div>
             </motion.div>

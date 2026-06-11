@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { siteConfig } from "@/lib/seo"
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://khorwalfinancials.com/sitemap.xml",
-    host: "https://khorwalfinancials.com",
+    sitemap: `${siteConfig.url}/sitemap.xml`,
+    host: siteConfig.url,
   }
 }

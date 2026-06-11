@@ -70,8 +70,35 @@ const commonMistakes = [
 ]
 
 export default function InsurancePlanningPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much term insurance cover do I need?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As a thumb rule, your term insurance cover should be at least 10-15 times your annual income, plus any outstanding liabilities like home loans or education loans."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is company-provided health insurance enough?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually, no. Company insurance is often inadequate and is only valid as long as you are employed. A standalone personal health insurance policy ensures continuous coverage even during job transitions."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="Insurance Planning"
         subtitle="Protect everything you've built — before the unexpected takes it away"
@@ -110,11 +137,50 @@ export default function InsurancePlanningPage() {
               remains secure regardless of what happens to you.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              At Grow Money Investment Services, we approach insurance as a financial planning tool — not a
+              At Khorwal Financials, we approach insurance as a financial planning tool — not a
               commission-driven product sale. We help you identify the gaps in your protection, cut the policies you
               don't need, and build a lean, comprehensive shield that lets your investments grow without risk to your
               downside.
             </p>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How much term insurance cover do I need?",
+                  a: "As a thumb rule, your term insurance cover should be at least 10-15 times your annual income, plus any outstanding liabilities like home loans. We help you calculate the exact 'Human Life Value' to ensure your family is fully protected.",
+                },
+                {
+                  q: "Is company-provided health insurance enough?",
+                  a: "Usually, no. Corporate cover is often limited, may have co-pay clauses, and ends if you lose or leave your job. A standalone health insurance policy ensures lifelong coverage and allows you to customize benefits like 'No Claim Bonus' and 'Restoration Benefit'.",
+                },
+                {
+                  q: "What is the best age to buy insurance?",
+                  a: "The best age is today. Insurance premiums increase significantly with age, and you risk being denied coverage if you develop a health condition later. Buying early locks in lower premiums for life.",
+                },
+                {
+                  q: "Should I buy insurance for investment (ULIP/Endowment)?",
+                  a: "Generally, we advise against mixing insurance and investment. Term plans provide better cover at lower costs, while mutual funds offer better long-term returns. Separating the two gives you more control and better overall financial outcomes.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Highlights */}

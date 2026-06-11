@@ -1,20 +1,35 @@
-import type { Metadata } from "next"
 import type React from "react"
+import { buildMetadata, buildBreadcrumbsJsonLd } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Insurance Planning Delhi — Term, Health & Life Insurance Advisory",
+export const metadata = buildMetadata({
+  title: "Insurance Planning — Term, Health & Life Insurance Advisory",
   description:
-    "Protect your family's future with comprehensive insurance planning. Expert guidance on term insurance, health coverage, and investment-linked policies. Khorwal Financials — AMFI Registered ARN-154187.",
-  keywords:
-    "insurance planning Delhi, term insurance advisor, health insurance guidance, life insurance planning, insurance advisor Janakpuri, financial protection planning",
-  alternates: { canonical: "https://khorwalfinancials.com/services/insurance-planning" },
-  openGraph: {
-    title: "Insurance Planning — Protect Your Family's Future | Khorwal Financials",
-    description: "Expert term & health insurance guidance. Comprehensive protection planning for every life stage. AMFI Registered ARN-154187.",
-    url: "https://khorwalfinancials.com/services/insurance-planning",
-  },
-}
+    "Protect your family's future with comprehensive insurance planning. Expert guidance on term insurance, health coverage, and investment-linked policies in Delhi. ARN-154187.",
+  path: "/services/insurance-planning",
+  keywords: [
+    "insurance planning Delhi",
+    "term insurance advisor Janakpuri",
+    "health insurance guidance",
+    "life insurance planning",
+    "insurance advisor West Delhi",
+    "financial protection planning",
+  ],
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  const jsonLd = buildBreadcrumbsJsonLd([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/#services" },
+    { name: "Insurance Planning", item: "/services/insurance-planning" },
+  ])
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
 }

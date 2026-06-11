@@ -65,8 +65,35 @@ const whyMatters =
   "The real value isn't picking funds — it's keeping you disciplined during market dips and stopping emotional decisions that hurt long-term returns. That's where we come in."
 
 export default function MutualFundsPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I choose the right mutual fund?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choosing the right fund depends on your financial goals, risk appetite, and time horizon. An advisor like Khorwal Financials can help match you to funds that align with your specific objectives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the benefits of investing in mutual funds?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key benefits include professional management, diversification, liquidity, and potential for higher returns compared to traditional savings like FDs."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="Mutual Funds Investment"
         subtitle="Grow your wealth through professionally managed, diversified funds"
@@ -97,7 +124,7 @@ export default function MutualFundsPage() {
           >
             <p className="text-slate-300 text-lg leading-relaxed">
               Mutual funds pool money from multiple investors to build a diversified portfolio across equities, bonds,
-              or both. At Grow Money Investment Services, we match you to the right fund based on your goals, risk
+              or both. At Khorwal Financials, we match you to the right fund based on your goals, risk
               appetite, and time horizon — and monitor performance on your behalf so you never have to second-guess
               your money.
             </p>
@@ -159,6 +186,41 @@ export default function MutualFundsPage() {
                   </motion.div>
                 )
               })}
+            </div>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "How do I choose the right mutual fund?",
+                  a: "Choosing the right fund depends on your financial goals, risk appetite, and time horizon. An advisor like Khorwal Financials can help match you to funds that align with your specific objectives, whether it's wealth creation, tax saving, or regular income.",
+                },
+                {
+                  q: "What are the benefits of investing in mutual funds?",
+                  a: "Key benefits include professional management by expert fund managers, instant diversification across multiple stocks/bonds, high liquidity (you can withdraw most funds within 1-2 days), and potential for significantly higher returns compared to traditional savings like FDs.",
+                },
+                {
+                  q: "Is there any risk in mutual funds?",
+                  a: "Yes, mutual fund investments are subject to market risks. The value of your investment can go up or down based on market conditions. However, long-term investing and proper asset allocation can help mitigate these risks.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
 

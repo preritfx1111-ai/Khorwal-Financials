@@ -1,20 +1,35 @@
-import type { Metadata } from "next"
 import type React from "react"
+import { buildMetadata, buildBreadcrumbsJsonLd } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "Portfolio Review & Rebalancing — Optimize Your Investments",
   description:
-    "Get a comprehensive portfolio review and strategic rebalancing by Khorwal Financials. We analyze your current holdings, benchmark performance, and optimize your asset allocation for long-term goals. ARN-154187.",
-  keywords:
-    "portfolio review Delhi, portfolio rebalancing service, mutual fund portfolio analysis, investment optimization, portfolio advisor, asset allocation review, quarterly portfolio review",
-  alternates: { canonical: "https://khorwalfinancials.com/services/portfolio-review" },
-  openGraph: {
-    title: "Portfolio Review & Rebalancing — Khorwal Financials",
-    description: "Expert portfolio analysis & rebalancing. Align your investments with your goals. Quarterly reviews included. AMFI Registered ARN-154187.",
-    url: "https://khorwalfinancials.com/services/portfolio-review",
-  },
-}
+    "Get a comprehensive portfolio review by Khorwal Financials. We analyze your current holdings, benchmark performance, and optimize your asset allocation. ARN-154187.",
+  path: "/services/portfolio-review",
+  keywords: [
+    "portfolio review Delhi",
+    "portfolio rebalancing service",
+    "mutual fund portfolio analysis",
+    "investment optimization Janakpuri",
+    "portfolio advisor West Delhi",
+    "quarterly portfolio review",
+  ],
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  const jsonLd = buildBreadcrumbsJsonLd([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/#services" },
+    { name: "Portfolio Review", item: "/services/portfolio-review" },
+  ])
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
 }

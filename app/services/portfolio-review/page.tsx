@@ -80,8 +80,35 @@ const portfolioProblems = [
 ]
 
 export default function PortfolioReviewPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is portfolio rebalancing important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Portfolio rebalancing is crucial because it ensures your risk profile remains consistent with your original financial goals. It involves selling high-performing assets and buying underperforming ones to maintain your target asset allocation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I review my mutual fund portfolio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "At Khorwal Financials, we recommend a structured quarterly review. However, significant life events or major market shifts (20%+) may trigger an immediate ad-hoc review."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="Portfolio Review & Rebalancing"
         subtitle="Your portfolio grows fastest when it's aligned, optimised, and actively managed"
@@ -122,10 +149,49 @@ export default function PortfolioReviewPage() {
               forget" approach is a myth that costs Indian investors crores every year.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              At Grow Money Investment Services, we provide structured quarterly reviews that go beyond a performance
+              At Khorwal Financials, we provide structured quarterly reviews that go beyond a performance
               snapshot. We assess your portfolio's health across 15+ parameters and deliver actionable recommendations
               — not a generic report.
             </p>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Why is portfolio rebalancing important?",
+                  a: "Portfolio rebalancing ensures your risk profile remains consistent with your original financial goals. Over time, some assets grow faster than others, changing your allocation (e.g., from 60:40 to 80:20). Rebalancing locks in gains and restores your intended risk profile.",
+                },
+                {
+                  q: "What is portfolio overlap?",
+                  a: "Portfolio overlap occurs when you hold multiple mutual funds that invest in the same underlying stocks. This gives a false sense of diversification and often increases your overall risk and costs. We help identify and remove this redundancy.",
+                },
+                {
+                  q: "How often should I review my mutual fund portfolio?",
+                  a: "At Khorwal Financials, we recommend a structured quarterly review. This frequency is enough to catch major drifts without over-reacting to short-term market noise.",
+                },
+                {
+                  q: "Does rebalancing involve tax implications?",
+                  a: "Yes, selling mutual fund units may attract Capital Gains Tax (LTCG or STCG). Our rebalancing recommendations always include a tax-impact analysis to ensure the benefits of rebalancing outweigh the tax costs.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Highlights */}

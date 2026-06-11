@@ -9,68 +9,9 @@ import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://khorwalfinancials.com"),
-  title: {
-    default: "Khorwal Financials — Expert Mutual Fund Advisory in Delhi",
-    template: "%s | Khorwal Financials",
-  },
-  description:
-    "Khorwal Financials is an AMFI-registered mutual fund distributor (ARN-154187) offering expert SIP planning, portfolio advisory, lumpsum investment, SWP planning, and insurance services in Delhi. Trusted by 150+ families.",
-  keywords:
-    "mutual fund advisor Delhi, AMFI registered distributor ARN-154187, SIP planning Delhi, investment advisor Janakpuri, Khorwal Financials, Suman Khorwal, mutual fund investment India, financial advisor Delhi, wealth management, ELSS tax saving, lumpsum investment, SWP planning, portfolio review",
-  authors: [{ name: "Suman Khorwal", url: "https://khorwalfinancials.com" }],
-  creator: "Khorwal Financials",
-  publisher: "Khorwal Financials",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: "https://khorwalfinancials.com",
-    siteName: "Khorwal Financials",
-    title: "Khorwal Financials — Expert Mutual Fund Advisory in Delhi",
-    description:
-      "AMFI-registered mutual fund advisory. Expert SIP planning, portfolio management & wealth advisory. ARN-154187. Serving 150+ happy investors.",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Khorwal Financials — Mutual Fund Advisory",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    site: "@MfdSuman",
-    creator: "@MfdSuman",
-    title: "Khorwal Financials — Expert Mutual Fund Advisory",
-    description: "AMFI-registered mutual fund advisor. SIP planning, portfolio management & wealth advisory in Delhi. ARN-154187.",
-    images: ["/logo.png"],
-  },
-  icons: {
-    icon: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
-    apple: [{ url: "/favicon.png", type: "image/png", sizes: "512x512" }],
-    shortcut: "/favicon.png",
-  },
-  alternates: {
-    canonical: "https://khorwalfinancials.com",
-  },
-  verification: {
-    // google: "your-google-search-console-verification-token",
-  },
-  category: "finance",
-}
+import { buildMetadata, siteConfig } from "@/lib/seo"
+
+export const metadata = buildMetadata()
 
 // JSON-LD Structured Data for local business + financial advisor
 const jsonLd = {
@@ -78,11 +19,10 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://khorwalfinancials.com/#business",
-      name: "Khorwal Financials",
-      description:
-        "AMFI-registered mutual fund distributor offering expert SIP planning, portfolio advisory, and wealth management services in Delhi.",
-      url: "https://khorwalfinancials.com",
+      "@id": `${siteConfig.url}/#business`,
+      name: siteConfig.name,
+      description: siteConfig.description,
+      url: siteConfig.url,
       telephone: "+91-9911186409",
       email: "growmoney1709@gmail.com",
       address: {
@@ -107,23 +47,22 @@ const jsonLd = {
         },
       ],
       sameAs: [
-        "https://www.facebook.com/share/18FVpxAQLT/",
-        "https://x.com/MfdSuman",
-        "https://www.instagram.com/khorwal_financials",
-        "https://www.linkedin.com/in/suman-khorwal-751659237/",
+        siteConfig.links.facebook,
+        siteConfig.links.twitter,
+        siteConfig.links.instagram,
+        siteConfig.links.linkedin,
       ],
       priceRange: "₹₹",
-      servesCuisine: undefined,
-      image: "https://khorwalfinancials.com/logo.png",
+      image: `${siteConfig.url}/logo.png`,
     },
     {
       "@type": "FinancialService",
-      "@id": "https://khorwalfinancials.com/#service",
-      name: "Khorwal Financials — Mutual Fund Advisory",
+      "@id": `${siteConfig.url}/#service`,
+      name: `${siteConfig.name} — Mutual Fund Advisory`,
       description:
         "Expert mutual fund distribution, SIP planning, lumpsum investment, SWP planning, insurance advisory, and portfolio review services.",
       provider: {
-        "@id": "https://khorwalfinancials.com/#business",
+        "@id": `${siteConfig.url}/#business`,
       },
       areaServed: {
         "@type": "Country",
@@ -144,26 +83,26 @@ const jsonLd = {
     },
     {
       "@type": "Person",
-      "@id": "https://khorwalfinancials.com/#founder",
-      name: "Suman Khorwal",
+      "@id": `${siteConfig.url}/#founder`,
+      name: siteConfig.author,
       jobTitle: "AMFI-Registered Mutual Fund Distributor",
       description:
-        "Suman Khorwal is an AMFI-registered mutual fund distributor (ARN-154187) with 7+ years of experience in financial advisory and SIP planning.",
-      url: "https://khorwalfinancials.com/team",
-      sameAs: ["https://www.linkedin.com/in/suman-khorwal-751659237/"],
-      worksFor: { "@id": "https://khorwalfinancials.com/#business" },
+        `${siteConfig.author} is an AMFI-registered mutual fund distributor (ARN-154187) with 7+ years of experience in financial advisory and SIP planning.`,
+      url: `${siteConfig.url}/team`,
+      sameAs: [siteConfig.links.linkedin],
+      worksFor: { "@id": `${siteConfig.url}/#business` },
     },
     {
       "@type": "WebSite",
-      "@id": "https://khorwalfinancials.com/#website",
-      url: "https://khorwalfinancials.com",
-      name: "Khorwal Financials",
-      publisher: { "@id": "https://khorwalfinancials.com/#business" },
+      "@id": `${siteConfig.url}/#website`,
+      url: siteConfig.url,
+      name: siteConfig.name,
+      publisher: { "@id": `${siteConfig.url}/#business` },
       potentialAction: {
         "@type": "SearchAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "https://khorwalfinancials.com/?q={search_term_string}",
+          urlTemplate: `${siteConfig.url}/?q={search_term_string}`,
         },
         "query-input": "required name=search_term_string",
       },

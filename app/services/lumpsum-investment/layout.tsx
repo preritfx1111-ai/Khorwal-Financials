@@ -1,20 +1,35 @@
-import type { Metadata } from "next"
 import type React from "react"
+import { buildMetadata, buildBreadcrumbsJsonLd } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Lumpsum Investment Planning Delhi — One-Time Mutual Fund Advisory",
+export const metadata = buildMetadata({
+  title: "Lumpsum Investment Planning — Strategic One-Time Advisory",
   description:
-    "Invest your lumpsum amount strategically in mutual funds. Expert guidance on fund selection, market timing, and tax optimization. Khorwal Financials — AMFI Registered ARN-154187.",
-  keywords:
-    "lumpsum investment mutual fund, one-time investment planning, lumpsum fund selection, invest bonus mutual fund, lumpsum vs SIP, lumpsum advisor Delhi",
-  alternates: { canonical: "https://khorwalfinancials.com/services/lumpsum-investment" },
-  openGraph: {
-    title: "Lumpsum Investment Advisory — Khorwal Financials",
-    description: "Deploy your lumpsum strategically. Expert mutual fund selection & tax optimization. AMFI Registered ARN-154187.",
-    url: "https://khorwalfinancials.com/services/lumpsum-investment",
-  },
-}
+    "Invest your lumpsum amount strategically in mutual funds. Expert guidance on fund selection, market timing, and tax optimization by Khorwal Financials. AMFI Registered ARN-154187.",
+  path: "/services/lumpsum-investment",
+  keywords: [
+    "lumpsum investment mutual fund",
+    "one-time investment planning",
+    "lumpsum fund selection Delhi",
+    "invest bonus mutual fund",
+    "lumpsum vs SIP",
+    "lumpsum advisor Janakpuri",
+  ],
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  const jsonLd = buildBreadcrumbsJsonLd([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/#services" },
+    { name: "Lumpsum Investment", item: "/services/lumpsum-investment" },
+  ])
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
 }

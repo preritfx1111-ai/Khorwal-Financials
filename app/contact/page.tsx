@@ -187,7 +187,8 @@ export default function Contact() {
 
                 <h2 className="text-2xl font-bold text-white mb-2">Send us a Message</h2>
                 <p className="text-slate-400 text-sm mb-8">
-                  Fill in your details and we'll get back to you within 24 hours.
+                  Looking for a trusted <strong className="text-slate-300">mutual fund advisor in Janakpuri, Delhi</strong>? 
+                  Fill in your details below and we'll get back to you within 24 hours to discuss your financial goals.
                 </p>
 
                 {/* Status banners */}

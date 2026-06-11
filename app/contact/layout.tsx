@@ -1,20 +1,19 @@
-import type { Metadata } from "next"
 import type React from "react"
+import { buildMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Contact Us — Free Mutual Fund Consultation",
+export const metadata = buildMetadata({
+  title: "Contact Us — Expert Mutual Fund Advisory in Delhi",
   description:
-    "Get in touch with Khorwal Financials for a free, no-obligation mutual fund consultation. Call +91 9911186409 or visit us at Sagar Tower, Janakpuri, Delhi. AMFI Registered Distributor ARN-154187.",
-  keywords:
-    "contact Khorwal Financials, mutual fund consultation Delhi, free investment advice, financial advisor contact, Janakpuri investment advisor, Suman Khorwal phone",
-  alternates: { canonical: "https://khorwalfinancials.com/contact" },
-  openGraph: {
-    title: "Contact Khorwal Financials — Free Investment Consultation",
-    description:
-      "Speak directly with Suman Khorwal, AMFI-registered advisor. Free first consultation. +91 9911186409 | Sagar Tower, Janakpuri, Delhi.",
-    url: "https://khorwalfinancials.com/contact",
-  },
-}
+    "Get in touch with Khorwal Financials for expert SIP planning and mutual fund advisory. Visit our office in Janakpuri, Delhi, or call us at +91-9911186409. AMFI Registered ARN-154187.",
+  path: "/contact",
+  keywords: [
+    "contact Khorwal Financials",
+    "financial advisor Delhi phone number",
+    "mutual fund distributor Janakpuri address",
+    "SIP planning consultation",
+    "Suman Khorwal contact",
+  ],
+})
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>

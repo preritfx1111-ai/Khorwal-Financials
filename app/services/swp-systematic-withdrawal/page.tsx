@@ -68,8 +68,35 @@ const swpVsFd = [
 ]
 
 export default function SWPPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Systematic Withdrawal Plan (SWP)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "An SWP is a facility that allows an investor to withdraw a fixed amount of money at regular intervals (monthly, quarterly, etc.) from their mutual fund investment. It's often used to generate a regular income, especially in retirement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is SWP different from an FD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unlike a Fixed Deposit where you get fixed interest and your principal is eroded by inflation, an SWP allows your remaining corpus to stay invested in market-linked funds, potentially growing faster than inflation while providing regular cash flow."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="SWP — Systematic Withdrawal Plan"
         subtitle="Generate the retirement income you deserve — without outliving your savings"
@@ -109,9 +136,48 @@ export default function SWPPage() {
               <em className="text-emerald-400">and</em> pays you every month.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              At Grow Money Investment Services, we design SWP portfolios built for longevity — meaning your money
+              At Khorwal Financials, we design SWP portfolios built for longevity — meaning your money
               should last as long as you do, and ideally leave something meaningful for your family.
             </p>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "What is a Systematic Withdrawal Plan (SWP)?",
+                  a: "An SWP is a facility provided by mutual funds that allows you to withdraw a fixed amount of money at pre-defined intervals (usually monthly). It's essentially the opposite of a SIP, used to generate regular cash flow.",
+                },
+                {
+                  q: "Is SWP tax-efficient compared to dividends?",
+                  a: "Yes, SWP is generally much more tax-efficient than dividends or FD interest. In an SWP, each withdrawal is considered a mix of principal and capital gains. Only the capital gains portion is taxed, and at a lower rate if held for over a year (LTCG).",
+                },
+                {
+                  q: "Can the principal amount decrease in an SWP?",
+                  a: "Yes, if the withdrawal rate is higher than the fund's growth rate, the principal will decrease. Our goal at Khorwal Financials is to find a 'Sustainable Withdrawal Rate' that allows for income without depleting your corpus prematurely.",
+                },
+                {
+                  q: "Who should consider an SWP?",
+                  a: "SWP is ideal for retirees seeking monthly income, professionals with a large corpus wanting to supplement their salary, or anyone needing regular payouts from their investments while keeping the rest invested for growth.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Highlights */}

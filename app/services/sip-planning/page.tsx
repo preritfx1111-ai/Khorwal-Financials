@@ -62,8 +62,43 @@ const sipMythVsFact = [
 ]
 
 export default function SIPPlanningPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the minimum amount to start a SIP in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most mutual fund schemes allow you to start a Systematic Investment Plan (SIP) with as little as ₹500 per month."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I stop my SIP anytime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, SIPs are flexible. You can stop, pause, or skip your monthly installments at any time without any penalty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are SIP returns guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SIP returns are not guaranteed as they are linked to market performance. However, historical data shows that equity SIPs over 10-15 years often deliver 12-15% CAGR."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="SIP Planning"
         subtitle="Build real, lasting wealth — one systematic investment at a time"
@@ -103,7 +138,7 @@ export default function SIPPlanningPage() {
               the power of time, discipline, and the right fund selection working together.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed">
-              At Grow Money Investment Services, we don't just set up your SIP and disappear. We engineer your entire
+              At Khorwal Financials, we don't just set up your SIP and disappear. We engineer your entire
               SIP portfolio — mapped to specific life goals, reviewed quarterly, and adjusted as your income and
               priorities evolve.
             </p>
@@ -203,7 +238,7 @@ export default function SIPPlanningPage() {
             <p className="text-slate-300 text-base leading-relaxed">
               Studies show investors who work with advisors earn 2–3% more per year on average — not because of fund
               selection, but because advisors prevent panic-selling during downturns. That 2–3% difference compounds
-              into lakhs over a decade. That's the Grow Money difference.
+              into lakhs over a decade. That's the Khorwal Financials difference.
             </p>
           </motion.div>
 
@@ -227,6 +262,49 @@ export default function SIPPlanningPage() {
                 <div key={f} className="flex items-start space-x-3">
                   <CheckCircle size={16} className="text-emerald-400 flex-shrink-0 mt-0.5" />
                   <span className="text-slate-300 text-sm">{f}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "What is the minimum amount to start a SIP in India?",
+                  a: "Most mutual fund schemes allow you to start a Systematic Investment Plan (SIP) with as little as ₹500 per month. Some specialized schemes may even allow ₹100, making it accessible for everyone.",
+                },
+                {
+                  q: "Can I stop my SIP anytime?",
+                  a: "Yes, SIPs are flexible. You can stop, pause, or skip your monthly installments at any time without any penalty. However, for long-term wealth creation, consistency is key.",
+                },
+                {
+                  q: "Are SIP returns guaranteed?",
+                  a: "SIP returns are not guaranteed as they are linked to market performance. However, historical data shows that equity SIPs over 10-15 years often deliver 12-15% CAGR, beating inflation and traditional savings.",
+                },
+                {
+                  q: "How is SIP different from a Lumpsum investment?",
+                  a: "SIP involves investing a fixed amount regularly (monthly), which helps in rupee-cost averaging. Lumpsum is a one-time investment. SIP is generally better for volatile markets as it reduces the risk of timing the market.",
+                },
+                {
+                  q: "Do I need a Demat account for SIP?",
+                  a: "No, a Demat account is not mandatory for investing in mutual funds via SIP. You can invest directly through an AMFI-registered distributor like Khorwal Financials.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
                 </div>
               ))}
             </div>

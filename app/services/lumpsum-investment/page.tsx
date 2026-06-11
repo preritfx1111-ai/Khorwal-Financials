@@ -67,8 +67,35 @@ const deploymentApproaches = [
 ]
 
 export default function LumpsumInvestmentPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I invest my lumpsum amount all at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Whether to invest all at once or through a Systematic Transfer Plan (STP) depends on current market conditions and your risk appetite. In volatile markets, phased deployment via STP is usually safer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the minimum amount for a lumpsum investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most mutual fund schemes allow lumpsum investments starting from ₹5,000. Some liquid or debt funds may even allow smaller amounts."
+        }
+      }
+    ]
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="Lumpsum Investment"
         subtitle="Put your money to work — strategically, safely, and at full potential"
@@ -104,7 +131,7 @@ export default function LumpsumInvestmentPage() {
               uninformed investment.
             </p>
             <p className="text-slate-300 text-lg leading-relaxed mb-4">
-              At Grow Money Investment Services, we specialize in lumpsum deployment strategies that are tailored to
+              At Khorwal Financials, we specialize in lumpsum deployment strategies that are tailored to
               <em className="text-emerald-400"> your specific situation</em> — your tax position, your timeline, your
               risk capacity, and the macroeconomic environment at the time of investment.
             </p>
@@ -113,6 +140,45 @@ export default function LumpsumInvestmentPage() {
               after a promotion is very different from what works for a 55-year-old business owner deploying ₹50L from
               an asset sale. We calibrate every strategy accordingly.
             </p>
+          </motion.div>
+
+          {/* FAQ Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              {[
+                {
+                  q: "Should I invest my lumpsum amount all at once?",
+                  a: "Investing all at once (Immediate Lumpsum) is great during market corrections. However, in an uncertain or high market, we recommend a Systematic Transfer Plan (STP) — where your money is parked in a liquid fund and moved into equity over 3-12 months to average out the cost.",
+                },
+                {
+                  q: "Is lumpsum investing better than SIP?",
+                  a: "Neither is 'better' — they serve different purposes. SIP is for building wealth from regular income, while lumpsum is for deploying existing capital. Lumpsum allows your money to start compounding immediately, which can be advantageous over long periods.",
+                },
+                {
+                  q: "Can I withdraw my lumpsum investment anytime?",
+                  a: "Yes, most open-ended mutual funds allow you to withdraw your lumpsum investment within 1-2 working days. However, be mindful of exit loads (if any) and capital gains tax implications.",
+                },
+                {
+                  q: "What is an STP (Systematic Transfer Plan)?",
+                  a: "An STP allows you to transfer a fixed amount from one mutual fund scheme (usually a low-risk liquid fund) to another (usually an equity fund) at regular intervals. It's the most disciplined way to deploy a large lumpsum into equity markets.",
+                },
+              ].map((faq, i) => (
+                <div key={i} className="card-dark p-6">
+                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
+                    <span className="text-emerald-400">Q.</span> {faq.q}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Highlights */}

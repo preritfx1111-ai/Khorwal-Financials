@@ -1,20 +1,35 @@
-import type { Metadata } from "next"
 import type React from "react"
+import { buildMetadata, buildBreadcrumbsJsonLd } from "@/lib/seo"
 
-export const metadata: Metadata = {
+export const metadata = buildMetadata({
   title: "SIP Planning Delhi — Systematic Investment Plan Advisory",
   description:
-    "Start a Systematic Investment Plan (SIP) with as little as ₹500/month. Expert SIP planning by Khorwal Financials — goal-based, risk-profiled, regularly monitored. AMFI Registered ARN-154187.",
-  keywords:
-    "SIP planning Delhi, systematic investment plan, SIP advisor, start SIP online, SIP calculator, SIP returns, monthly investment plan India, SIP mutual fund",
-  alternates: { canonical: "https://khorwalfinancials.com/services/sip-planning" },
-  openGraph: {
-    title: "SIP Planning — Systematic Investment Plan Advisory | Khorwal Financials",
-    description: "Start your SIP journey with expert guidance. Goal-based SIP planning from ₹500/month. AMFI registered advisor ARN-154187.",
-    url: "https://khorwalfinancials.com/services/sip-planning",
-  },
-}
+    "Build wealth systematically through expert SIP planning. Determine the right investment amount and fund selection based on your life goals. Start investing from ₹500/month. ARN-154187.",
+  path: "/services/sip-planning",
+  keywords: [
+    "SIP planning Delhi",
+    "systematic investment plan advisor",
+    "start SIP Janakpuri",
+    "power of compounding India",
+    "goal-based SIP planning",
+    "best SIP for retirement",
+  ],
+})
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  const jsonLd = buildBreadcrumbsJsonLd([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/#services" },
+    { name: "SIP Planning", item: "/services/sip-planning" },
+  ])
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
+  )
 }

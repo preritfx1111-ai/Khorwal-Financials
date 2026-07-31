@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
     "lumpsum fund selection Delhi",
     "invest bonus mutual fund",
     "lumpsum vs SIP",
-    "lumpsum advisor Janakpuri",
+    "lumpsum advisor Rohini, Delhi",
   ],
 })
 

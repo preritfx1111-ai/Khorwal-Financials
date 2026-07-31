@@ -9,7 +9,7 @@ export const metadata = buildMetadata({
   keywords: [
     "SIP planning Delhi",
     "systematic investment plan advisor",
-    "start SIP Janakpuri",
+    "start SIP Rohini, Delhi",
     "power of compounding India",
     "goal-based SIP planning",
     "best SIP for retirement",

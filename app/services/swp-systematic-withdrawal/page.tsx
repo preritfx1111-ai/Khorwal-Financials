@@ -13,6 +13,8 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import PageHeader from "@/components/shared/PageHeader"
+import ServiceHighlightsStrip from "@/components/shared/ServiceHighlightsStrip"
+import ServiceFAQAccordion from "@/components/shared/ServiceFAQAccordion"
 
 const highlights = [
   { label: "Ideal For", value: "Retirees & near-retirees" },
@@ -141,71 +143,20 @@ export default function SWPPage() {
             </p>
           </motion.div>
 
-          {/* FAQ Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-14"
-          >
-            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "What is a Systematic Withdrawal Plan (SWP)?",
-                  a: "An SWP is a facility provided by mutual funds that allows you to withdraw a fixed amount of money at pre-defined intervals (usually monthly). It's essentially the opposite of a SIP, used to generate regular cash flow.",
-                },
-                {
-                  q: "Is SWP tax-efficient compared to dividends?",
-                  a: "Yes, SWP is generally much more tax-efficient than dividends or FD interest. In an SWP, each withdrawal is considered a mix of principal and capital gains. Only the capital gains portion is taxed, and at a lower rate if held for over a year (LTCG).",
-                },
-                {
-                  q: "Can the principal amount decrease in an SWP?",
-                  a: "Yes, if the withdrawal rate is higher than the fund's growth rate, the principal will decrease. Our goal at Khorwal Financials is to find a 'Sustainable Withdrawal Rate' that allows for income without depleting your corpus prematurely.",
-                },
-                {
-                  q: "Who should consider an SWP?",
-                  a: "SWP is ideal for retirees seeking monthly income, professionals with a large corpus wanting to supplement their salary, or anyone needing regular payouts from their investments while keeping the rest invested for growth.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="card-dark p-6">
-                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
-                    <span className="text-emerald-400">Q.</span> {faq.q}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Highlights strip (Non-Card Pattern) */}
+          <ServiceHighlightsStrip highlights={highlights} />
 
-          {/* Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 mb-14"
-          >
-            {highlights.map((h) => (
-              <div key={h.label} className="card-dark p-5">
-                <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">{h.label}</p>
-                <p className="text-white font-semibold text-base">{h.value}</p>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Scenario */}
+          {/* Scenario (Non-Card Pattern) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="card-dark p-6 mb-14 border border-emerald-600/20"
+            className="p-7 rounded-2xl bg-gradient-to-br from-slate-900/90 to-slate-900/40 border border-slate-700/80 mb-14"
           >
             <h2 className="text-lg font-bold text-white mb-5">A Real Retirement Scenario</h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               {retirementScenario.map((r) => (
-                <div key={r.label}>
+                <div key={r.label} className="border-l-2 border-emerald-500 pl-4">
                   <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">{r.label}</p>
                   <p className="text-emerald-400 font-bold text-lg">{r.value}</p>
                 </div>
@@ -216,7 +167,7 @@ export default function SWPPage() {
             </p>
           </motion.div>
 
-          {/* Benefits */}
+          {/* Benefits (Non-Card Pattern) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -224,7 +175,7 @@ export default function SWPPage() {
             className="mb-14"
           >
             <h2 className="text-xl font-bold text-white mb-6">Why SWP Beats Every Alternative</h2>
-            <div className="space-y-4">
+            <div className="border-y border-slate-800/80 divide-y divide-slate-800/80 bg-slate-900/30 rounded-xl overflow-hidden">
               {swpBenefits.map((b, i) => {
                 const Icon = b.icon
                 return (
@@ -233,14 +184,15 @@ export default function SWPPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
-                    className="card-dark p-6 hover:border-emerald-600/40 transition-all duration-300"
+                    className="p-6 hover:bg-slate-800/50 transition-all duration-300 relative group overflow-hidden"
                   >
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-emerald-600/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600/25 group-hover:scale-105 transition-all">
                         <Icon size={20} className="text-emerald-400" />
                       </div>
                       <div>
-                        <h3 className="text-white font-bold mb-2">{b.title}</h3>
+                        <h3 className="text-white font-bold mb-2 group-hover:text-emerald-300 transition-colors">{b.title}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">{b.description}</p>
                       </div>
                     </div>
@@ -249,6 +201,28 @@ export default function SWPPage() {
               })}
             </div>
           </motion.div>
+
+          {/* FAQ Section (Non-Card Pattern) */}
+          <ServiceFAQAccordion
+            faqs={[
+              {
+                q: "What is a Systematic Withdrawal Plan (SWP)?",
+                a: "An SWP is a facility provided by mutual funds that allows you to withdraw a fixed amount of money at pre-defined intervals (usually monthly). It's essentially the opposite of a SIP, used to generate regular cash flow.",
+              },
+              {
+                q: "Is SWP tax-efficient compared to dividends?",
+                a: "Yes, SWP is generally much more tax-efficient than dividends or FD interest. In an SWP, each withdrawal is considered a mix of principal and capital gains. Only the capital gains portion is taxed, and at a lower rate if held for over a year (LTCG).",
+              },
+              {
+                q: "Can the principal amount decrease in an SWP?",
+                a: "Yes, if the withdrawal rate is higher than the fund's growth rate, the principal will decrease. Our goal at Khorwal Financials is to find a 'Sustainable Withdrawal Rate' that allows for income without depleting your corpus prematurely.",
+              },
+              {
+                q: "Who should consider an SWP?",
+                a: "SWP is ideal for retirees seeking monthly income, professionals with a large corpus wanting to supplement their salary, or anyone needing regular payouts from their investments while keeping the rest invested for growth.",
+              },
+            ]}
+          />
 
           {/* SWP vs FD table */}
           <motion.div

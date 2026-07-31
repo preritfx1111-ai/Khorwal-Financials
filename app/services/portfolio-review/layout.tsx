@@ -10,8 +10,8 @@ export const metadata = buildMetadata({
     "portfolio review Delhi",
     "portfolio rebalancing service",
     "mutual fund portfolio analysis",
-    "investment optimization Janakpuri",
-    "portfolio advisor West Delhi",
+    "investment optimization Rohini, Delhi",
+    "portfolio advisor Rohini, Delhi",
     "quarterly portfolio review",
   ],
 })

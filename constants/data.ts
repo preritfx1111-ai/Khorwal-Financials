@@ -33,7 +33,7 @@ export const companyData = {
     phone: "+91 9911186409",
     email: "growmoney1709@gmail.com",
     whatsapp: "+91 9911186409",
-    address: "No. 601-604, Sagar Tower, 6th Floor, Above SBI, Near Gate No. 3 of Janakpuri Metro Station, District Centre, Janakpuri, Delhi - 110058",
+    address: "233, 1st Floor, Pocket A-3, Sector-7, Rohini, Delhi 110085",
   },
   workingHours: "Mon - Sat: 10:00 AM - 6:00 PM IST",
   socialMedia: {

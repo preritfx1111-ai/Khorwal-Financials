@@ -52,7 +52,7 @@ export function buildMetadata({
     "mutual fund advisor Delhi",
     "AMFI registered distributor",
     "SIP planning Delhi",
-    "investment advisor Janakpuri",
+    "investment advisor Rohini, Delhi",
     "Khorwal Financials",
     "Suman Khorwal",
     "ARN-154187",

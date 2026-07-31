@@ -57,41 +57,57 @@ export default function StatsCounter() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest mb-3">By The Numbers</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Our Track Record</h2>
+          <p className="text-emerald-400 text-sm font-semibold uppercase tracking-widest mb-3">
+            By The Numbers
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            Our Track Record
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4">
-          {statistics.map((stat, index) => {
-            const IconComponent = Icons[stat.icon as keyof typeof Icons] as any || Icons.TrendingUp
+        {/* Integrated Horizon Metric Bar (Non-Card Pattern) */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="bg-slate-900/70 border border-slate-700/70 rounded-3xl backdrop-blur-xl overflow-hidden shadow-2xl"
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-700/60">
+            {statistics.map((stat, index) => {
+              const IconComponent =
+                (Icons[stat.icon as keyof typeof Icons] as any) ||
+                Icons.TrendingUp
 
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -4, scale: 1.03 }}
-                className="text-center group"
-              >
-                <div className="card-dark p-6 h-full hover:border-emerald-600/40 transition-all duration-300 relative overflow-hidden">
-                  {/* Hover glow */}
-                  <div className="absolute inset-0 bg-emerald-500/0 group-hover:bg-emerald-500/5 transition-all duration-500 rounded-lg" />
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="p-6 md:p-8 flex flex-col items-center justify-center text-center group hover:bg-emerald-500/[0.04] transition-colors duration-300 relative"
+                >
+                  {/* Subtle top indicator on hover */}
+                  <div className="absolute top-0 left-1/4 right-1/4 h-0.5 bg-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-emerald-600/20 group-hover:bg-emerald-600/30 rounded-full mb-4 transition-colors duration-300">
-                    <IconComponent className="w-6 h-6 text-emerald-400" />
+                  <div className="inline-flex items-center justify-center w-11 h-11 bg-emerald-600/15 group-hover:bg-emerald-600/25 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110">
+                    <IconComponent className="w-5 h-5 text-emerald-400" />
                   </div>
 
                   <div className="text-3xl lg:text-4xl font-black text-white mb-1 tracking-tight">
-                    <AnimatedNumber target={stat.number} suffix={stat.suffix} />
+                    <AnimatedNumber
+                      target={stat.number}
+                      suffix={stat.suffix}
+                    />
                   </div>
 
-                  <p className="text-slate-400 text-xs font-medium leading-tight">{stat.label}</p>
-                </div>
-              </motion.div>
-            )
-          })}
-        </div>
+                  <p className="text-slate-400 text-xs font-semibold uppercase tracking-wider leading-tight">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

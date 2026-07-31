@@ -9,41 +9,48 @@ export default function PartnersSection() {
   const duplicatedPartners = [...partners, ...partners, ...partners]
 
   return (
-    <section className="py-20 overflow-hidden">
+    <section className="py-20 overflow-hidden relative">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Partners</h2>
-          <p className="text-xl text-slate-400">Trusted by India&apos;s leading AMCs</p>
+          <p className="text-emerald-400 text-xs font-semibold uppercase tracking-widest mb-2">
+            Institutional Ecosystem
+          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
+            Our Partners & AMCs
+          </h2>
+          <p className="text-lg text-slate-400">
+            Authorized distributor for India&apos;s leading Asset Management Companies
+          </p>
         </motion.div>
       </div>
 
-      {/* Marquee Container */}
-      <div className="relative">
+      {/* Streamlined Luminous Partner Track (Non-Card Pattern) */}
+      <div className="streamlined-ribbon relative">
         {/* Left fade gradient */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none bg-gradient-to-r from-slate-900 to-transparent" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 z-10 pointer-events-none bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         {/* Right fade gradient */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-slate-900 to-transparent" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 z-10 pointer-events-none bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent" />
 
         {/* Row 1 - scrolls left */}
-        <div className="marquee-track mb-4">
+        <div className="marquee-track mb-6">
           <div className="marquee-content marquee-animate-left">
             {duplicatedPartners.map((partner, index) => (
               <div
                 key={`row1-${index}`}
-                className="marquee-item-logo group"
+                className="flex-shrink-0 w-[220px] h-[76px] px-6 mx-4 flex items-center justify-center rounded-2xl bg-white/95 hover:bg-white transition-all duration-300 group hover:scale-105 shadow-md"
               >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
-                  width={220}
-                  height={70}
-                  className="object-contain max-h-[70px] w-full transition-transform duration-300 group-hover:scale-110"
+                  width={180}
+                  height={56}
+                  className="object-contain max-h-[50px] w-full transition-transform duration-300"
                 />
               </div>
             ))}
@@ -56,14 +63,14 @@ export default function PartnersSection() {
             {[...duplicatedPartners].reverse().map((partner, index) => (
               <div
                 key={`row2-${index}`}
-                className="marquee-item-logo group"
+                className="flex-shrink-0 w-[220px] h-[76px] px-6 mx-4 flex items-center justify-center rounded-2xl bg-white/95 hover:bg-white transition-all duration-300 group hover:scale-105 shadow-md"
               >
                 <Image
                   src={partner.logo}
                   alt={partner.name}
-                  width={220}
-                  height={70}
-                  className="object-contain max-h-[70px] w-full transition-transform duration-300 group-hover:scale-110"
+                  width={180}
+                  height={56}
+                  className="object-contain max-h-[50px] w-full transition-transform duration-300"
                 />
               </div>
             ))}

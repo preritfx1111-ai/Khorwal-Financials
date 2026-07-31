@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
     "systematic withdrawal plan advisor",
     "retirement income mutual fund",
     "monthly income from mutual fund",
-    "SWP advisor Janakpuri",
+    "SWP advisor Rohini, Delhi",
     "retirement planning India",
   ],
 })

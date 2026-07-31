@@ -27,16 +27,16 @@ const jsonLd = {
       email: "growmoney1709@gmail.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "No. 601-604, Sagar Tower, 6th Floor, Above SBI, Near Gate No. 3 of Janakpuri Metro Station, District Centre",
-        addressLocality: "Janakpuri",
+        streetAddress: "233, 1st Floor, Pocket A-3, Sector-7",
+        addressLocality: "Rohini",
         addressRegion: "Delhi",
-        postalCode: "110058",
+        postalCode: "110085",
         addressCountry: "IN",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: "28.517773",
-        longitude: "77.080700",
+        latitude: "28.704100",
+        longitude: "77.112100",
       },
       openingHoursSpecification: [
         {
@@ -121,9 +121,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         {/* Geo meta tags for local SEO */}
         <meta name="geo.region" content="IN-DL" />
-        <meta name="geo.placename" content="Janakpuri, Delhi" />
-        <meta name="geo.position" content="28.517773;77.080700" />
-        <meta name="ICBM" content="28.517773, 77.080700" />
+        <meta name="geo.placename" content="Rohini, Delhi" />
+        <meta name="geo.position" content="28.704100;77.112100" />
+        <meta name="ICBM" content="28.704100, 77.112100" />
         {/* Business meta */}
         <meta name="classification" content="Finance, Investment, Mutual Funds" />
         <meta name="theme-color" content="#0f172a" />

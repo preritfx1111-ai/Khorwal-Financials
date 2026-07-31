@@ -14,6 +14,8 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import PageHeader from "@/components/shared/PageHeader"
+import ServiceHighlightsStrip from "@/components/shared/ServiceHighlightsStrip"
+import ServiceFAQAccordion from "@/components/shared/ServiceFAQAccordion"
 
 const highlights = [
   { label: "Review Frequency", value: "Quarterly + Ad hoc" },
@@ -155,69 +157,18 @@ export default function PortfolioReviewPage() {
             </p>
           </motion.div>
 
-          {/* FAQ Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-14"
-          >
-            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Why is portfolio rebalancing important?",
-                  a: "Portfolio rebalancing ensures your risk profile remains consistent with your original financial goals. Over time, some assets grow faster than others, changing your allocation (e.g., from 60:40 to 80:20). Rebalancing locks in gains and restores your intended risk profile.",
-                },
-                {
-                  q: "What is portfolio overlap?",
-                  a: "Portfolio overlap occurs when you hold multiple mutual funds that invest in the same underlying stocks. This gives a false sense of diversification and often increases your overall risk and costs. We help identify and remove this redundancy.",
-                },
-                {
-                  q: "How often should I review my mutual fund portfolio?",
-                  a: "At Khorwal Financials, we recommend a structured quarterly review. This frequency is enough to catch major drifts without over-reacting to short-term market noise.",
-                },
-                {
-                  q: "Does rebalancing involve tax implications?",
-                  a: "Yes, selling mutual fund units may attract Capital Gains Tax (LTCG or STCG). Our rebalancing recommendations always include a tax-impact analysis to ensure the benefits of rebalancing outweigh the tax costs.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="card-dark p-6">
-                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
-                    <span className="text-emerald-400">Q.</span> {faq.q}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          {/* Highlights strip (Non-Card Pattern) */}
+          <ServiceHighlightsStrip highlights={highlights} />
 
-          {/* Highlights */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 mb-14"
-          >
-            {highlights.map((h) => (
-              <div key={h.label} className="card-dark p-5">
-                <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">{h.label}</p>
-                <p className="text-white font-semibold text-base">{h.value}</p>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Common portfolio problems */}
+          {/* Common portfolio problems (Non-Card Pattern) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="mb-14"
           >
-            <h2 className="text-xl font-bold text-white mb-6">What Happens When Portfolios Aren't Reviewed</h2>
-            <div className="space-y-4">
+            <h2 className="text-xl font-bold text-white mb-6">What Happens When Portfolios Aren&apos;t Reviewed</h2>
+            <div className="border-y border-slate-800/80 divide-y divide-slate-800/80 bg-slate-900/30 rounded-xl overflow-hidden">
               {portfolioProblems.map((p, i) => {
                 const Icon = p.icon
                 return (
@@ -226,14 +177,14 @@ export default function PortfolioReviewPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.25 + i * 0.1 }}
-                    className="card-dark p-6 border-l-4 border-red-500/40 hover:border-l-red-500/70 transition-all duration-300"
+                    className="p-6 hover:bg-slate-800/40 transition-all border-l-4 border-red-500/60"
                   >
                     <div className="flex items-start space-x-4">
-                      <div className="w-10 h-10 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-red-500/15 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon size={20} className="text-red-400" />
                       </div>
                       <div>
-                        <h3 className="text-white font-bold mb-2">{p.problem}</h3>
+                        <h3 className="text-white font-bold mb-1.5">{p.problem}</h3>
                         <p className="text-slate-400 text-sm leading-relaxed">{p.description}</p>
                       </div>
                     </div>
@@ -243,7 +194,7 @@ export default function PortfolioReviewPage() {
             </div>
           </motion.div>
 
-          {/* Our process */}
+          {/* Our process (Non-Card Pattern) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -251,21 +202,22 @@ export default function PortfolioReviewPage() {
             className="mb-14"
           >
             <h2 className="text-xl font-bold text-white mb-6">Our 4-Step Review Process</h2>
-            <div className="space-y-4">
+            <div className="border-y border-slate-800/80 divide-y divide-slate-800/80 bg-slate-900/30 rounded-xl overflow-hidden">
               {reviewProcess.map((step, i) => (
                 <motion.div
                   key={step.step}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
-                  className="card-dark p-6 hover:border-emerald-600/40 transition-all duration-300"
+                  className="p-6 hover:bg-slate-800/50 transition-all duration-300 relative group overflow-hidden"
                 >
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="flex items-start space-x-4">
-                    <div className="text-3xl font-black text-emerald-600/30 leading-none flex-shrink-0 w-10">
+                    <div className="text-3xl font-black text-slate-600 group-hover:text-emerald-400 transition-colors leading-none flex-shrink-0 w-10">
                       {step.step}
                     </div>
                     <div>
-                      <h3 className="text-white font-bold mb-2">{step.title}</h3>
+                      <h3 className="text-white font-bold mb-2 group-hover:text-emerald-300 transition-colors">{step.title}</h3>
                       <p className="text-slate-400 text-sm leading-relaxed">{step.description}</p>
                     </div>
                   </div>
@@ -282,7 +234,7 @@ export default function PortfolioReviewPage() {
             className="mb-14"
           >
             <h2 className="text-xl font-bold text-white mb-6">When to Trigger an Immediate Review</h2>
-            <div className="space-y-3">
+            <div className="space-y-3 pl-2">
               {reviewTriggers.map((trigger, i) => (
                 <motion.div
                   key={i}
@@ -291,12 +243,34 @@ export default function PortfolioReviewPage() {
                   transition={{ duration: 0.4, delay: 0.55 + i * 0.07 }}
                   className="flex items-start space-x-3"
                 >
-                  <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full flex-shrink-0 mt-2" />
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0 mt-2" />
                   <p className="text-slate-300 text-sm">{trigger}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+
+          {/* FAQ Section (Non-Card Pattern) */}
+          <ServiceFAQAccordion
+            faqs={[
+              {
+                q: "Why is portfolio rebalancing important?",
+                a: "Portfolio rebalancing ensures your risk profile remains consistent with your original financial goals. Over time, some assets grow faster than others, changing your allocation (e.g., from 60:40 to 80:20). Rebalancing locks in gains and restores your intended risk profile.",
+              },
+              {
+                q: "What is portfolio overlap?",
+                a: "Portfolio overlap occurs when you hold multiple mutual funds that invest in the same underlying stocks. This gives a false sense of diversification and often increases your overall risk and costs. We help identify and remove this redundancy.",
+              },
+              {
+                q: "How often should I review my mutual fund portfolio?",
+                a: "At Khorwal Financials, we recommend a structured quarterly review. This frequency is enough to catch major drifts without over-reacting to short-term market noise.",
+              },
+              {
+                q: "Does rebalancing involve tax implications?",
+                a: "Yes, selling mutual fund units may attract Capital Gains Tax (LTCG or STCG). Our rebalancing recommendations always include a tax-impact analysis to ensure the benefits of rebalancing outweigh the tax costs.",
+              },
+            ]}
+          />
 
           {/* Advisor note */}
           <motion.div
@@ -308,7 +282,7 @@ export default function PortfolioReviewPage() {
             <p className="text-xs text-slate-500 uppercase tracking-widest mb-3 font-semibold">The Uncomfortable Truth</p>
             <p className="text-slate-300 text-base leading-relaxed">
               Most investors review their portfolio only when it hurts — after it has underperformed. By then, the
-              damage is done. The best time to review is when everything seems fine. That's when complacency creates
+              damage is done. The best time to review is when everything seems fine. That&apos;s when complacency creates
               risk, and we catch it before it costs you.
             </p>
           </motion.div>
@@ -318,7 +292,7 @@ export default function PortfolioReviewPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="card-dark p-6 mb-12"
+            className="border-l-4 border-blue-500 bg-slate-900/40 p-7 rounded-r-2xl mb-12"
           >
             <h3 className="text-lg font-bold text-white mb-5">What Our Review Service Delivers</h3>
             <div className="grid sm:grid-cols-2 gap-3">

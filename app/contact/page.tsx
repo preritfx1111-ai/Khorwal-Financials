@@ -187,8 +187,8 @@ export default function Contact() {
 
                 <h2 className="text-2xl font-bold text-white mb-2">Send us a Message</h2>
                 <p className="text-slate-400 text-sm mb-8">
-                  Looking for a trusted <strong className="text-slate-300">mutual fund advisor in Janakpuri, Delhi</strong>? 
-                  Fill in your details below and we'll get back to you within 24 hours to discuss your financial goals.
+                  Looking for a trusted <strong className="text-slate-300">mutual fund advisor in Rohini, Delhi</strong>? 
+                  Fill in your details below and we&apos;ll get back to you within 24 hours to discuss your financial goals.
                 </p>
 
                 {/* Status banners */}
@@ -374,37 +374,40 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* ── Sidebar ── */}
-            <div className="space-y-4">
-              {[
-                { icon: MapPin, title: "Our Office", content: companyData.contact.address, link: null },
-                { icon: Phone, title: "Phone", content: companyData.contact.phone, link: `tel:${companyData.contact.phone}` },
-                { icon: Mail, title: "Email", content: companyData.contact.email, link: `mailto:${companyData.contact.email}` },
-                { icon: Clock, title: "Working Hours", content: companyData.workingHours, link: null },
-              ].map(({ icon: Icon, title, content, link }) => (
-                <motion.div
-                  key={title}
-                  whileHover={{ x: 3 }}
-                  transition={{ duration: 0.2 }}
-                  className="card-dark p-5 hover:border-emerald-600/40 transition-colors duration-300"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-5 h-5 text-emerald-400" />
+            {/* ── Sidebar (Concierge Contact List - Non-Card Pattern) ── */}
+            <div className="space-y-6">
+              <div className="border-y border-slate-800/80 divide-y divide-slate-800/80 bg-slate-900/30 rounded-2xl overflow-hidden">
+                {[
+                  { icon: MapPin, title: "Our Office", content: companyData.contact.address, link: null },
+                  { icon: Phone, title: "Phone", content: companyData.contact.phone, link: `tel:${companyData.contact.phone}` },
+                  { icon: Mail, title: "Email", content: companyData.contact.email, link: `mailto:${companyData.contact.email}` },
+                  { icon: Clock, title: "Working Hours", content: companyData.workingHours, link: null },
+                ].map(({ icon: Icon, title, content, link }) => (
+                  <motion.div
+                    key={title}
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                    className="p-5 sm:p-6 hover:bg-slate-800/40 transition-all duration-300 relative group overflow-hidden"
+                  >
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="flex items-start space-x-4">
+                      <div className="w-10 h-10 bg-emerald-600/15 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-600/25 group-hover:scale-105 transition-all">
+                        <Icon className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-white text-base mb-1 group-hover:text-emerald-300 transition-colors">{title}</h3>
+                        {link ? (
+                          <a href={link} className="text-sm text-slate-400 hover:text-emerald-400 transition-colors leading-relaxed">
+                            {content}
+                          </a>
+                        ) : (
+                          <p className="text-sm text-slate-400 leading-relaxed">{content}</p>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-white text-sm mb-1">{title}</h3>
-                      {link ? (
-                        <a href={link} className="text-sm text-slate-400 hover:text-emerald-400 transition-colors leading-relaxed">
-                          {content}
-                        </a>
-                      ) : (
-                        <p className="text-sm text-slate-400 leading-relaxed">{content}</p>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
+              </div>
 
               <a
                 href="https://wa.me/919911186409"
@@ -431,15 +434,15 @@ export default function Contact() {
               width="100%"
               height="100%"
               frameBorder="0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.3844166097276!2d77.08070012346942!3d28.517773874549666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdf8c8c8c8c8d%3A0x8c8c8c8c8c8c8c8c!2sSagar%20Tower%2C%20Janakpuri%2C%20Delhi!5e0!3m2!1sen!2sin!4v1707396000000"
+              src="https://maps.google.com/maps?q=233,+1st+Floor,+Pocket+A-3,+Sector-7,+Rohini,+Delhi+110085&t=&z=16&ie=UTF8&iwloc=&output=embed"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
-              title="Khorwal Financials Office — Sagar Tower, Janakpuri, Delhi"
+              title="Khorwal Financials Office — 233, 1st Floor, Pocket A-3, Sector-7, Rohini, Delhi 110085"
             />
           </div>
           <p className="text-slate-500 text-sm mt-4 text-center">
-            Sagar Tower, 6th Floor, Above SBI, Near Gate No. 3 of Janakpuri Metro Station, District Centre, Janakpuri, Delhi - 110058
+            233, 1st Floor, Pocket A-3, Sector-7, Rohini, Delhi 110085
           </p>
         </div>
       </section>

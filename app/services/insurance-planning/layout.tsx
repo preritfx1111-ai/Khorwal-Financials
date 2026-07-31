@@ -8,10 +8,10 @@ export const metadata = buildMetadata({
   path: "/services/insurance-planning",
   keywords: [
     "insurance planning Delhi",
-    "term insurance advisor Janakpuri",
+    "term insurance advisor Rohini, Delhi",
     "health insurance guidance",
     "life insurance planning",
-    "insurance advisor West Delhi",
+    "insurance advisor Rohini, Delhi",
     "financial protection planning",
   ],
 })

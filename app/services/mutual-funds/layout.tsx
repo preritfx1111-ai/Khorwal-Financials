@@ -11,7 +11,7 @@ export const metadata = buildMetadata({
     "best mutual funds for long term",
     "equity mutual fund selection",
     "debt fund guidance",
-    "mutual fund distributor Janakpuri",
+    "mutual fund distributor Rohini, Delhi",
     "goal-based mutual fund investing",
   ],
 })

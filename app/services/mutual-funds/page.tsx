@@ -15,6 +15,9 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import PageHeader from "@/components/shared/PageHeader"
+import ServiceHighlightsStrip from "@/components/shared/ServiceHighlightsStrip"
+import ServiceCategoriesList from "@/components/shared/ServiceCategoriesList"
+import ServiceFAQAccordion from "@/components/shared/ServiceFAQAccordion"
 
 const fundCategories = [
   {
@@ -135,94 +138,32 @@ export default function MutualFundsPage() {
             </p>
           </motion.div>
 
-          {/* Highlights grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 mb-12"
-          >
-            {highlights.map((h) => (
-              <div key={h.label} className="card-dark p-5">
-                <p className="text-xs text-slate-500 uppercase tracking-widest mb-1">{h.label}</p>
-                <p className="text-white font-semibold text-base">{h.value}</p>
-              </div>
-            ))}
-          </motion.div>
+          {/* Highlights strip (Non-Card Pattern) */}
+          <ServiceHighlightsStrip highlights={highlights} />
 
-          {/* Fund categories */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-12"
-          >
-            <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-wider text-sm text-slate-500">
-              Fund Categories We Advise On
-            </h2>
-            <div className="space-y-3">
-              {fundCategories.map((cat, i) => {
-                const Icon = cat.icon
-                return (
-                  <motion.div
-                    key={cat.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
-                    className="card-dark p-4 flex items-center justify-between group hover:border-emerald-600/40 transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <div className="w-9 h-9 bg-emerald-600/15 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <Icon size={18} className="text-emerald-400" />
-                      </div>
-                      <div>
-                        <p className="text-white font-semibold text-sm">{cat.name}</p>
-                        <p className="text-slate-400 text-xs mt-0.5">{cat.description}</p>
-                      </div>
-                    </div>
-                    <span className={`text-xs font-semibold px-3 py-1 rounded-full border flex-shrink-0 ml-4 ${cat.badgeColor}`}>
-                      {cat.badge}
-                    </span>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
+          {/* Fund categories (Non-Card Pattern) */}
+          <ServiceCategoriesList
+            title="Fund Categories We Advise On"
+            categories={fundCategories}
+          />
 
-          {/* FAQ Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mb-14"
-          >
-            <h2 className="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "How do I choose the right mutual fund?",
-                  a: "Choosing the right fund depends on your financial goals, risk appetite, and time horizon. An advisor like Khorwal Financials can help match you to funds that align with your specific objectives, whether it's wealth creation, tax saving, or regular income.",
-                },
-                {
-                  q: "What are the benefits of investing in mutual funds?",
-                  a: "Key benefits include professional management by expert fund managers, instant diversification across multiple stocks/bonds, high liquidity (you can withdraw most funds within 1-2 days), and potential for significantly higher returns compared to traditional savings like FDs.",
-                },
-                {
-                  q: "Is there any risk in mutual funds?",
-                  a: "Yes, mutual fund investments are subject to market risks. The value of your investment can go up or down based on market conditions. However, long-term investing and proper asset allocation can help mitigate these risks.",
-                },
-              ].map((faq, i) => (
-                <div key={i} className="card-dark p-6">
-                  <h3 className="text-white font-bold mb-2 flex items-start gap-2">
-                    <span className="text-emerald-400">Q.</span> {faq.q}
-                  </h3>
-                  <p className="text-slate-400 text-sm leading-relaxed pl-6">
-                    {faq.a}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+          {/* FAQ Section (Non-Card Pattern) */}
+          <ServiceFAQAccordion
+            faqs={[
+              {
+                q: "How do I choose the right mutual fund?",
+                a: "Choosing the right fund depends on your financial goals, risk appetite, and time horizon. An advisor like Khorwal Financials can help match you to funds that align with your specific objectives, whether it's wealth creation, tax saving, or regular income.",
+              },
+              {
+                q: "What are the benefits of investing in mutual funds?",
+                a: "Key benefits include professional management by expert fund managers, instant diversification across multiple stocks/bonds, high liquidity (you can withdraw most funds within 1-2 days), and potential for significantly higher returns compared to traditional savings like FDs.",
+              },
+              {
+                q: "Is there any risk in mutual funds?",
+                a: "Yes, mutual fund investments are subject to market risks. The value of your investment can go up or down based on market conditions. However, long-term investing and proper asset allocation can help mitigate these risks.",
+              },
+            ]}
+          />
 
           {/* Why an advisor matters */}
           <motion.div

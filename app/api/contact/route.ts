@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 // ─── Email HTML Template ────────────────────────────────────────────────────
 function buildEmailHTML(data: {
@@ -158,10 +161,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Read env variables (server-side only — never exposed to client)
-    const mailServiceUrl = process.env.MAIL_SERVICE_URL
-    const mailServiceKey = process.env.MAIL_SERVICE_KEY
+    const receiverEmails = process.env.RECEIVER_EMAILS?.split(",").map(e => e.trim()) || []
+    const senderEmail = process.env.SENDER_EMAIL || "contact@notifications.khorwalfinancials.com"
 
-    if (!mailServiceUrl || !mailServiceKey) {
+    if (!process.env.RESEND_API_KEY || receiverEmails.length === 0) {
       console.error("Mail service environment variables not configured.")
       return NextResponse.json(
         { success: false, message: "Mail service not configured. Please contact us directly." },
@@ -182,26 +185,16 @@ export async function POST(request: NextRequest) {
     const emailContent = buildEmailHTML({ name, email, phone, service, message, submittedAt })
 
     // Call the Mail Sender Service
-    const response = await fetch(`${mailServiceUrl}/api/send-email`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": mailServiceKey,
-      },
-      body: JSON.stringify({
-        // toEmail: "growmoney1709@gmail.com",
-        toEmail: "growmoney1709@gmail.com",
-        subject: `New Enquiry — ${service} | ${name}`,
-        fromName: "Khorwal Financials Website",
-        replyTo: email,
-        emailContent,
-      }),
+    const data = await resend.emails.send({
+      from: `Khorwal Financials Website <${senderEmail}>`,
+      to: receiverEmails,
+      replyTo: email,
+      subject: `New Enquiry — ${service} | ${name}`,
+      html: emailContent,
     })
 
-    const result = await response.json()
-
-    if (!response.ok || !result.success) {
-      console.error("Mail service error:", result)
+    if (data.error) {
+      console.error("Mail service error:", data.error)
       return NextResponse.json(
         { success: false, message: "Failed to send your message. Please try again." },
         { status: 500 }
